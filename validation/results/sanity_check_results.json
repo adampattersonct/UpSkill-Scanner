@@ -1,0 +1,90 @@
+{
+  "skills_per_posting": {
+    "mean": 25.33084112149533,
+    "median": 24.0,
+    "std": 8.064279275117777,
+    "min": 5,
+    "max": 66,
+    "q25": 21.0,
+    "q75": 29.0,
+    "zero_skill_postings": 0,
+    "low_skill_postings": 0,
+    "high_skill_postings": 8
+  },
+  "category_stats": {
+    "technical_skills": {
+      "mean": 7.646728971962617,
+      "median": 6.0,
+      "zero_count": 33,
+      "pct_with_zero": 6.16822429906542
+    },
+    "soft_skills": {
+      "mean": 8.342056074766354,
+      "median": 8.0,
+      "zero_count": 0,
+      "pct_with_zero": 0.0
+    },
+    "certifications": {
+      "mean": 0.685981308411215,
+      "median": 0.0,
+      "zero_count": 388,
+      "pct_with_zero": 72.52336448598132
+    },
+    "domain_knowledge": {
+      "mean": 8.65607476635514,
+      "median": 8.0,
+      "zero_count": 1,
+      "pct_with_zero": 0.1869158878504673
+    }
+  },
+  "frequency_distribution": {
+    "total_unique_skills": 4385,
+    "zipf_alpha": 0.8118151430428374,
+    "zipf_r_squared": 0.9850520092393956,
+    "singleton_skills": 2803,
+    "singleton_pct": 63.9224629418472,
+    "top_10_concentration": 13.739669421487601,
+    "top_50_concentration": 29.508559622195985
+  },
+  "outliers": {
+    "high_frequency_outliers": [],
+    "category_mismatches": [
+      {
+        "skill": "Telecommunications",
+        "assigned_category": "technical_skills",
+        "likely_category": "soft_skills",
+        "count": 2
+      },
+      {
+        "skill": "Problem Solving",
+        "assigned_category": "technical_skills",
+        "likely_category": "soft_skills",
+        "count": 1
+      },
+      {
+        "skill": "Technical Leadership",
+        "assigned_category": "technical_skills",
+        "likely_category": "soft_skills",
+        "count": 1
+      },
+      {
+        "skill": "Phone Communication",
+        "assigned_category": "technical_skills",
+        "likely_category": "soft_skills",
+        "count": 1
+      },
+      {
+        "skill": "Written Communication",
+        "assigned_category": "technical_skills",
+        "likely_category": "soft_skills",
+        "count": 1
+      },
+      {
+        "skill": "Hazard Communication",
+        "assigned_category": "technical_skills",
+        "likely_category": "soft_skills",
+        "count": 1
+      }
+    ]
+  }
+}

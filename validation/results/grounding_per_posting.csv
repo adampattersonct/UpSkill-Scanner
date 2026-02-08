@@ -1,0 +1,481 @@
+index,title,company,total_skills,grounded,ungrounded,grounding_rate
+0,US Program Associate,GiveDirectly,15,11,4,0.7333333333333333
+1,Business Analyst (Real Estate Development and Facilities-Finance and Administration),NYU Langone Health,23,19,4,0.8260869565217391
+2,Credit Analyst IV - C&I,The Provident Bank of New Jersey,31,27,4,0.8709677419354839
+3,Associate Convertible Sales,Citizens,21,17,4,0.8095238095238095
+4,Credit Specialist,The Provident Bank of New Jersey,25,18,7,0.72
+5,Procurement Analyst,,17,13,4,0.7647058823529411
+6,Public Markets Middle Office Analyst,Office of the Comptroller,21,16,5,0.7619047619047619
+7,SENIOR SYSTEMS ANALYST,NYC Human Resources Administration,49,47,2,0.9591836734693877
+8,"Security & Resiliency Initiative, Investment Research Analyst, Vice President",JPMorganChase,21,20,1,0.9523809523809523
+9,Asset Management - Fixed Income - Securitized Trader,JPMorganChase,29,29,0,1.0
+10,Securities Strategies Associate,Wells Fargo,27,25,2,0.9259259259259259
+11,"Vice President, Lead Investment Banker, Fund Finance",Wells Fargo,24,20,4,0.8333333333333334
+12,"Structured Finance - Esoteric ABS, Managing Director",Fitch Ratings,18,15,3,0.8333333333333334
+13,Regulatory Reporting Analyst,Barclays,26,23,3,0.8846153846153846
+14,Balance Sheet Mgmt Sr. Analyst VP,Citi,18,15,3,0.8333333333333334
+15,"Senior Product Manager - Technical, Amazon Connect",Amazon Web Services,21,17,4,0.8095238095238095
+16,"Finance Manager, Amazon Leo, Leo Procurement Finance",Amazon.com,18,13,5,0.7222222222222222
+17,"Sr. Sales Comp Policy Analyst, Ads Sales Incentive Compensation",Amazon.com,15,13,2,0.8666666666666667
+18,"Senior Finance Analyst, Amazon Leo, Leo Procurement Finance",Amazon.com,19,14,5,0.7368421052631579
+19,"Sr. Product Marketing Manager, Media, Entertainment, Sports, Games Industries, AWS Industry Product Marketing, Media, Entertainment, Sports, Games",Amazon.com,26,18,8,0.6923076923076923
+20,Sr. Financial Analyst Commerce,Amazon.com,20,17,3,0.85
+21,"Actuarial Analyst, Amazon One Medical Actuary, Amazon One Medical Actuary",Amazon.com,23,22,1,0.9565217391304348
+22,"Sr. Sales Compensation Analyst, Ads Sales Incentives",Amazon.com,20,18,2,0.9
+23,"Principal Economist, Stores Economics and Science",Amazon.com,21,21,0,1.0
+24,"Intake Associate (Seasonal VITA Program - Weekdays, Monday-Friday Only)",Grow Brooklyn,16,13,3,0.8125
+25,Sr. Leasing Sales Specialist (Corp. Aircraft Finance),Bank of America,17,15,2,0.8823529411764706
+26,"Collections Rep, temporary",Terumo Medical Corporation,16,11,5,0.6875
+27,Personal Banker,Valley Bank,25,22,3,0.88
+28,"Dir., Publisher & Partner Relations, LatAm",Audible,18,11,7,0.6111111111111112
+29,Senior Customer Service Representative,,17,13,4,0.7647058823529411
+30,Investigator,,17,14,3,0.8235294117647058
+31,CASE MANAGEMENT SUPERVISOR,NYC Human Resources Administration,19,12,7,0.631578947368421
+32,CASE MANAGEMENT TEAM LEADER,NYC Human Resources Administration,26,22,4,0.8461538461538461
+33,Valuation Control Group - North America Non Linear Rates - Associate,JPMorganChase,22,18,4,0.8181818181818182
+34,"MVP, HR Technology",Gartner,21,19,2,0.9047619047619048
+35,"Principal Associate, Data Scientist - Business Data Product",Capital One,32,27,5,0.84375
+36,Food Operations Manager 2,Sodexo,16,11,5,0.6875
+37,"Open Data, Emerging Talent Intern (Summer)",Metropolitan Transportation Authority,18,15,3,0.8333333333333334
+38,Assurance Experienced Senior,BDO,26,19,7,0.7307692307692307
+39,"Associate Director, Center of Excellence – Human Capital",KPMG,30,23,7,0.7666666666666667
+40,Capital Strategy Review Associate,Initio Capital,14,9,5,0.6428571428571429
+41,"Sr. Manager, Advertiser Support, Support Products & Services",Amazon.com,23,16,7,0.6956521739130435
+42,"Delivery Consultant – SAP GenAI/ML, Professional Services, SAP",Amazon Web Services,34,27,7,0.7941176470588235
+43,"Senior Analyst, AECOM Advisory-Real Estate and Urban Policy",AECOM,16,15,1,0.9375
+44,Software Engineer Intern (Early Career),S&P Global,30,28,2,0.9333333333333333
+45,Credit Products Analyst I,FlagStar Bank,24,23,1,0.9583333333333334
+46,"Incentives Technical Analyst, Infrastructure and Development, YouTube",Youtube,30,26,4,0.8666666666666667
+47,Senior Financial Analyst,The Hearst Corporation,29,23,6,0.7931034482758621
+48,Portfolio Risk Analyst,Initio Capital,26,22,4,0.8461538461538461
+49,Financial Project Analyst (Real Estate Development and Facilities),NYU Langone Health,24,18,6,0.75
+50,"Analyst/Associate, Project Finance Group, Latin America",Sumitomo Group,18,15,3,0.8333333333333334
+51,IT Business Analyst Principal II - SAP Modernization,PSEG,16,15,1,0.9375
+52,Associate Equity Research - Healthcare,Citizens,24,22,2,0.9166666666666666
+53,Associate Equity Research - Biopharma and Biotech,Citizens,19,18,1,0.9473684210526315
+54,Threat Analyst,,25,22,3,0.88
+55,Senior Technical Intelligence Analyst,,19,17,2,0.8947368421052632
+56,Operations Analyst,New York City Department of Youth and Community Development,20,17,3,0.85
+57,"HRA AOP Analyst, Bureau of Vital Statistics",New York City Department of Health and Mental Hygiene,20,20,0,1.0
+58,Senior Policy Analyst,New York City Department of Health and Mental Hygiene,22,18,4,0.8181818181818182
+59,"Principal Product Marketing Manager - Full Funnel Measurement, Ads Measurement",Amazon.com,17,12,5,0.7058823529411765
+60,"Director, NAMER GenAI Sales, AWS",Amazon Web Services,21,19,2,0.9047619047619048
+61,Software Engineer I- Ad Demand,Amazon.com,26,19,7,0.7307692307692307
+62,Marketing/BD Analyst (Law or Accounting Experience Required),Master Search Solutions,22,19,3,0.8636363636363636
+63,Client Services Consultant II,William O'Neil + Co. Incorporated,16,13,3,0.8125
+64,Technology Lead,Infosys,41,34,7,0.8292682926829268
+65,Corporate Banking Support Team Analyst,Barclays,25,23,2,0.92
+66,Senior Director of Clinical Quality Analytics,Boston Medical Center,26,21,5,0.8076923076923077
+67,Senior Financial Analyst,Boston Medical Center,32,29,3,0.90625
+68,Fund Manager Development,Boston Medical Center,20,19,1,0.95
+69,AML Analyst,Tata Consultancy Services (TCS),24,18,6,0.75
+70,IT Sourcing Analyst – Indirect Procurement,CVS Health,20,18,2,0.9
+71,Finance Manager,Citizens,28,24,4,0.8571428571428571
+72,Data Operations Coordinator,Analysis Group,27,23,4,0.8518518518518519
+73,Senior Investment Analyst,Avangrid,26,21,5,0.8076923076923077
+74,Transportation Analyst 3,MilliporeSigma,22,20,2,0.9090909090909091
+75,Senior Data Analyst (Data Analyst II),Commonwealth of Massachusetts,50,49,1,0.98
+76,"Policy Associate, Market Oversight and Transparency",Massachusetts Health Policy Commission,20,19,1,0.95
+77,Financial Analyst II,"The TJX Companies, Inc.",26,20,6,0.7692307692307693
+78,Sr Analyst Financial UST,American Tower,27,23,4,0.8518518518518519
+79,"Senior Manager, Strategy & Operations, MGB AI",Mass General Brigham,18,16,2,0.8888888888888888
+80,Claims Analyst I,Commonwealth of Massachusetts,6,2,4,0.3333333333333333
+81,Project Administrator - AccountingNew,"The Brattle Group, Inc.",18,14,4,0.7777777777777778
+82,Project Administrator - Accounting,THE BRATTLE GROUP,18,14,4,0.7777777777777778
+83,Privacy Specialist ll,Mass General Brigham,24,24,0,1.0
+84,Sr Financial Analyst,Chewy,24,20,4,0.8333333333333334
+85,"Energy & Utilities Analyst - 1898 & Co., Power Systems Planning - Electrical (Morristown / Newton / Portland)",Burns & McDonnell,35,33,2,0.9428571428571428
+86,Pricing Strategy Analyst,Ropes & Gray LLP,18,13,5,0.7222222222222222
+87,"Senior Analyst, Advanced Analytics",Liberty Mutual Insurance,26,21,5,0.8076923076923077
+88,"Assistant Director, Auto Product ,Program Governance",Liberty Mutual Insurance,22,20,2,0.9090909090909091
+89,Sr Financial Analyst,D.B. Roberts,27,23,4,0.8518518518518519
+90,"Actuarial Analyst, Amazon One Medical Actuary, Amazon One Medical Actuary",Amazon.com,23,22,1,0.9565217391304348
+91,Vision Center Manager L3,Walmart,22,17,5,0.7727272727272727
+92,Private Wealth Performance Associate,"NEPC, LLC",23,20,3,0.8695652173913043
+93,Sales Director Senior Living,Benchmark Senior Living,18,13,5,0.7222222222222222
+94,"Accounting and Finance Consulting - Supervisor, Strategic Finance and FP&A, Advanced Decision Modeling",RSM,37,31,6,0.8378378378378378
+95,Sales Director,Benchmark Senior Living,17,14,3,0.8235294117647058
+96,Activity Assistant,Benchmark Senior Living,12,6,6,0.5
+97,Operations Administrative Assistant,Jamaica Plain Neighborhood Development Corporation,18,13,5,0.7222222222222222
+98,Mind & Memory Care Director,Benchmark Senior Living,35,34,1,0.9714285714285714
+99,"Vice President, Private Assets Advisor Oversight and Commercial Negotiations",Fidelity Investments,19,14,5,0.7368421052631579
+100,"Associate Director, Global Downstream Marketing",Boston Scientific,20,17,3,0.85
+101,Project Manager - Supply Chain - Transportation,Staples,30,26,4,0.8666666666666667
+102,Senior Manager Data Science,Staples,37,34,3,0.918918918918919
+103,Associate Director: Data Transformation & Analytics (Private Equity),CrossCountry Consulting,27,25,2,0.9259259259259259
+104,(USA) Vision Center Manager NL 1 #2399,Walmart,20,14,6,0.7
+105,Pricing Strategy Manager,Ropes & Gray LLP,20,15,5,0.75
+106,Senior Growth Marketing Analyst,Force Factor,16,13,3,0.8125
+107,"Business Analyst, GTM Operations",Veracode,21,15,6,0.7142857142857143
+108,Data Scientist Manager,Ameriprise Financial,45,43,2,0.9555555555555556
+109,Performance Marketing Analyst,Force Factor,15,12,3,0.8
+110,Director Process Improvement System,Boston Medical Center,24,24,0,1.0
+111,Clinical Engineering Analyst,Boston Medical Center,27,23,4,0.8518518518518519
+112,PACS Applications Analyst II,Boston Medical Center,39,36,3,0.9230769230769231
+113,"Patient Access Supervisor, Emergency Department",Boston Medical Center,22,16,6,0.7272727272727273
+114,Applications Security Analyst (Epic) III / Senior,Boston Medical Center,22,19,3,0.8636363636363636
+115,"Chief of Staff, Operations",Boston Medical Center,24,14,10,0.5833333333333334
+116,Cash Processing Analyst,Boston Medical Center,22,19,3,0.8636363636363636
+117,"Senior Financial Analyst, Financial Planning - REMOTE",Boston Medical Center,32,30,2,0.9375
+118,Sr. Analyst – System Finance,Boston Medical Center,23,21,2,0.9130434782608695
+119,Cybersecurity Analyst,Boston Medical Center,35,25,10,0.7142857142857143
+120,"Research Scientist, Psychiatry (per diem)",Boston Medical Center,27,22,5,0.8148148148148148
+121,Administrative Assistant II BWH,Mass General Brigham,23,19,4,0.8260869565217391
+122,Administrative Assistant II RESEARCH NEUROLOGY,Mass General Brigham,36,31,5,0.8611111111111112
+123,"Senior Laboratory Clinical Manager, Chemistry",Mass General Brigham,21,16,5,0.7619047619047619
+124,Lead Environmental Services Aide,Mass General Brigham,17,13,4,0.7647058823529411
+125,ED REGISTRAR - Evenings 32 hours,Mass General Brigham,18,13,5,0.7222222222222222
+126,"Principal Technical Product Marketing Manager, Data for AI, AWS Product Marketing",Amazon Web Services,21,12,9,0.5714285714285714
+127,"Principal Technical Product Marketing Manager, Data and Analytics , AWS Product Marketing",Amazon Web Services,24,16,8,0.6666666666666666
+128,Materials Coordinator,Boston Medical Center,18,17,1,0.9444444444444444
+129,Operations Analyst/Scale Operations Supervisor,Reworld,20,18,2,0.9
+130,Research Lab Tech I,Mass General Brigham,18,15,3,0.8333333333333334
+131,WFD SUCCESS Program - PA BWFH Main 2,Mass General Brigham,5,3,2,0.6
+132,Senior Practice Assistant,Mass General Brigham,20,14,6,0.7
+133,Medical (float) Assistant II- Medical Specialties,Mass General Brigham,23,19,4,0.8260869565217391
+134,Research Lab Tech II NEUROLOGY sl,Mass General Brigham,19,16,3,0.8421052631578947
+135,Violence Recovery Program Manager,Mass General Brigham,14,9,5,0.6428571428571429
+136,Audiology Extern,Mass General Brigham,20,15,5,0.75
+137,"Location Analyst, WWGS Growth & Development",Amazon.com,24,22,2,0.9166666666666666
+138,Quality Operations Engineering Analyst II,Terumo Medical Corporation,16,11,5,0.6875
+139,"Basel Measurement & Analytics External Reporting, Analyst",JPMorganChase,29,25,4,0.8620689655172413
+140,Director Reporting & Analytics - Hybrid (PA/NJ/DE),Independence Blue Cross,34,34,0,1.0
+141,2026 Summer Intern - Finance Insights and Data Analyst (Branchburg),Roche,21,16,5,0.7619047619047619
+142,Senior Risk Analyst - Data Risk Office,Bloomberg,25,23,2,0.92
+143,Risk Management - Modeling Analytics Senior Associate,JPMorganChase,25,21,4,0.84
+144,"Sr. Analyst, FP&A",Comcast,24,20,4,0.8333333333333334
+145,"Specialist, Financial Analysis",Lincoln Financial Group,28,24,4,0.8571428571428571
+146,Senior Financial Analyst,Penske Truck Leasing,30,25,5,0.8333333333333334
+147,Analyst,Truveris,18,16,2,0.8888888888888888
+148,Product Pricing Analyst,Pop! Promos,21,16,5,0.7619047619047619
+149,Senior Credit Analyst,Church & Dwight Co.,22,18,4,0.8181818181818182
+150,Wealth Management Analyst,Vista Wealth Solutions,32,27,5,0.84375
+151,Financial Analyst Intern,Marsh McLennan Agency,26,23,3,0.8846153846153846
+152,Credit Risk & Strategy Analyst,Mercury Financial LLC,15,12,3,0.8
+153,Capital Markets Pricing Analyst,Newrez,18,17,1,0.9444444444444444
+154,Director of Treasury,PCI Pharma Services,25,20,5,0.8
+155,Personal Lines State Manager,NJM Insurance Group,20,14,6,0.7
+156,"Staff Analyst, Marketing",Angi,24,21,3,0.875
+157,Head of Investment Strategy,Transamerica,23,18,5,0.782608695652174
+158,Financial Analyst,Frontline Education,19,18,1,0.9473684210526315
+159,Senior Market and Portfolio Strategist,Vanguard,24,19,5,0.7916666666666666
+160,"Senior Associate, Private Investments",NFI Industries,24,19,5,0.7916666666666666
+161,"Sr Analyst, Strategy",Saint-Gobain,32,30,2,0.9375
+162,Senior Business Analytics Analyst,CardWorks Servicing,27,26,1,0.9629629629629629
+163,"Manufacturing Operator I, 6:00p - 6:30a",Terumo Medical Corporation,14,11,3,0.7857142857142857
+164,Rewards Product Associate,JPMorganChase,42,41,1,0.9761904761904762
+165,Risk Management - Strategic Analytics - Associate,JPMorganChase,30,26,4,0.8666666666666667
+166,"Sr. Director, Business Development - Surety (Large Commercial)",Nationwide Mutual Insurance Company,15,10,5,0.6666666666666666
+167,Client Advisor Seeking Diverse Voices,Northwestern Mutual,9,6,3,0.6666666666666666
+168,Financial Advisor with Healthcare Background,Northwestern Mutual,10,8,2,0.8
+169,Wealth Consultant with Military Background,Northwestern Mutual,9,7,2,0.7777777777777778
+170,"Strategic Operations Director, Transformation Office - Rowan University",Rowan University,17,14,3,0.8235294117647058
+171,"Manager, Strategic Finance and FP&A, Data Analytics",RSM,39,39,0,1.0
+172,Chemistry Lab Technician II,Terumo Medical Corporation,21,19,2,0.9047619047619048
+173,"Associate Director, Reimbursement & Access US (Multiple US Regions)",ITM Isotope Technologies Munich SE,28,22,6,0.7857142857142857
+174,Meetings & Digital Events Manager,Association Headquarters,21,16,5,0.7619047619047619
+175,Retail Manager 3,Sodexo,12,11,1,0.9166666666666666
+176,General Manager 5 - Food,Sodexo,17,14,3,0.8235294117647058
+177,Project Leader,PPL Corporation,23,20,3,0.8695652173913043
+178,"Entry Level Manufacturing, 2nd shift, 1:30p -10:00p",Terumo Medical Corporation,13,10,3,0.7692307692307693
+179,(USA) Asset Protection Operations Coach,Walmart,26,20,6,0.7692307692307693
+180,"Project Controls Mgr (Cost Engineering, Change Management) - 90167764 - Philadelphia",Amtrak,23,19,4,0.8260869565217391
+181,Management Analyst III,State of Delaware,14,8,6,0.5714285714285714
+182,"Associate, Enterprise Contracting Center",KPMG,22,19,3,0.8636363636363636
+183,Windchill Data Migration Architect (Remote)-5,Realign,31,25,6,0.8064516129032258
+184,KYC Review Analyst- Ops,City National Bank,19,18,1,0.9473684210526315
+185,National Project Management Specialist - Hybrid,Devereux,22,20,2,0.9090909090909091
+186,Associate Information Security Analyst - Security Operations,,23,21,2,0.9130434782608695
+187,Business Intelligence Systems Governance Analyst,Deloitte,26,22,4,0.8461538461538461
+188,KYC Review Analyst Senior- Ops,City National Bank,19,17,2,0.8947368421052632
+189,Sr Threat Intelligence Analyst,TD Bank,22,17,5,0.7727272727272727
+190,Senior PeopleSoft Developer/Analyst II,Princeton University,35,31,4,0.8857142857142857
+191,"Analyst, Financial",AAA Club Alliance,19,13,6,0.6842105263157895
+192,Senior Credit Policy Analyst,Lakeview Loan Servicing,23,20,3,0.8695652173913043
+193,Corporate Analyst Program-Implementations,Fiserv,21,15,6,0.7142857142857143
+194,Product Analyst - Senior Associate,JPMorganChase,24,23,1,0.9583333333333334
+195,Insurance Verification Analyst - Full Time,Penn Medicine,13,8,5,0.6153846153846154
+196,Analyst - Solebury Capital (F),PNC Financial Services Group,26,23,3,0.8846153846153846
+197,Licensed Behavior Analyst,Bancroft,20,15,5,0.75
+198,Data Integration Analyst III-Data-Driven Discovery in Biomedicine (D3b),Children's Hospital of Philadelphia,23,17,6,0.7391304347826086
+199,"Director, Digital Marketing Analytics",CMI Media Group,15,13,2,0.8666666666666667
+200,"Director, Digital Marketing Analytics",CMI Media Group,15,13,2,0.8666666666666667
+201,"Director, Digital Marketing Analytics",CMI Media Group,15,13,2,0.8666666666666667
+202,Research Analyst (Medical Policy) - Hybrid (PA/NJ/DE),Independence Blue Cross,17,11,6,0.6470588235294118
+203,"Director, Integrated Strategy",,31,28,3,0.9032258064516129
+204,Senior G&C Analyst-Business Continuity Planning,TD Bank,19,15,4,0.7894736842105263
+205,Credit Analyst - SBA Underwriting,First Commonwealth Bank,26,22,4,0.8461538461538461
+206,Credit Associate,First Commonwealth Bank,20,15,5,0.75
+207,Data Scientist Sr - Deposit Fraud Analytics/Strategy,PNC Financial Services Group,28,28,0,1.0
+208,Senior Call Center Quality Assurance Analyst,Blink Health,17,14,3,0.8235294117647058
+209,Product Analyst,Inovalon,23,17,6,0.7391304347826086
+210,Cost of Care Analyst,Elevance Health,36,32,4,0.8888888888888888
+211,Lending Analyst,Urban Redevelopment Authority of Pittsburgh,25,23,2,0.92
+212,Finance Leader - Procurement,Eaton,20,13,7,0.65
+213,Enterprise Data Analyst II - Data & Analytics,"WesBanco Bank, Inc.",25,22,3,0.88
+214,Industry X - Technical Teamcenter Architect,Accenture,34,29,5,0.8529411764705882
+215,Software/Systems Associate (part-time) - SDS - Dietrich College,Carnegie Mellon University,21,17,4,0.8095238095238095
+216,Commercial Kitchen Incubator Program Support Specialist,FAYETTE COUNTY COMMUNITY ACTION AGENCY,16,14,2,0.875
+217,COUNTY CASEWORKER I - IDD SUPPORTS COORDINATOR,COUNTY OF GREENE,17,15,2,0.8823529411764706
+218,Associate Financial Advisor,Allegheny Financial Group,21,17,4,0.8095238095238095
+219,"Tax Managing Director, Private Client Services",BDO,47,45,2,0.9574468085106383
+220,"Tax Senior Manager, Core Tax Services",BDO,31,28,3,0.9032258064516129
+221,"Library Services Associate-Career, Business, & Nonprofit Services",Carnegie Library of Pittsburgh,21,15,6,0.7142857142857143
+222,Contract Specialist / Administrator,Lifesteps,25,22,3,0.88
+223,ABA Practice Manager,NeurAbilities Healthcare,19,14,5,0.7368421052631579
+224,"Associate, Enterprise Contracting Center",KPMG,22,19,3,0.8636363636363636
+225,Intermediate GIS Analyst,WSP,35,32,3,0.9142857142857143
+226,"Mortgage Credit Business Analyst - Pittsburgh, PA",First National Bank,26,22,4,0.8461538461538461
+227,Java Full Stack Developer,TECHSTRA SOLUTIONS,64,60,4,0.9375
+228,Senior Java Full Stack Developer,TECHSTRA SOLUTIONS,64,60,4,0.9375
+229,Payments Business Systems Analyst – Commercial & Investment Banking,TECHSTRA SOLUTIONS,46,37,9,0.8043478260869565
+230,Business Analyst – Process & Reporting,TECHSTRA SOLUTIONS,16,13,3,0.8125
+231,Quality Assurance Lead - Java Applications,TECHSTRA SOLUTIONS,56,52,4,0.9285714285714286
+232,Lead Java Full Stack Developer,TECHSTRA SOLUTIONS,58,54,4,0.9310344827586207
+233,Clinical Director of the Hope Therapy Center,The Hope Learning Center,28,23,5,0.8214285714285714
+234,Foreign Exchange Trading Analyst,First National Bank,18,15,3,0.8333333333333334
+235,Business Analyst Senior,PNC Financial Services Group,29,27,2,0.9310344827586207
+236,Senior Business Analyst - Finance and Regulatory Reporting,PNC Financial Services Group,22,21,1,0.9545454545454546
+237,Analyst,Tata Consultancy Services (TCS),31,26,5,0.8387096774193549
+238,Accountant,US Department of Veterans Affairs,11,9,2,0.8181818181818182
+239,Data Engineer - Manager,PwC,30,25,5,0.8333333333333334
+240,Security Analyst,All Lines Technology,17,16,1,0.9411764705882353
+241,Benefits Analyst - On-Site Only,Core Natural Resources,19,19,0,1.0
+242,Retail Credit Business Analyst,First National Bank,19,16,3,0.8421052631578947
+243,Senior IT Scrum Master - Manufacturing Execution System (MES) - HYBRID,NTT DATA,41,35,6,0.8536585365853658
+244,Senior Business Analyst - Enterprise Data Platform & Analytics,NTT DATA,30,28,2,0.9333333333333333
+245,Genome Bioinformatics Analyst,Association of Biomolecular Resource Facilities,32,29,3,0.90625
+246,Lease Analyst,"Snyder Associated Cos., Inc.",18,13,5,0.7222222222222222
+247,"Associate Analyst, Operations - Opportunities & Investments",UPMC,18,14,4,0.7777777777777778
+248,Financial Analyst II,University of Pittsburgh,13,12,1,0.9230769230769231
+249,Payroll Analyst III,Thermo Fisher Scientific,22,17,5,0.7727272727272727
+250,Sourcing & Procurement Marketing Manager - NASPFY26,Accenture,20,18,2,0.9
+251,Service Desk Analyst,Saint Vincent College,33,27,6,0.8181818181818182
+252,Loan Support Analyst Senior- Workflow Coordinator - ABF Servicing,PNC Financial Services Group,15,13,2,0.8666666666666667
+253,Data Analyst – Institutional Effectiveness and Planning – Office of the Provost,Carnegie Mellon University,18,18,0,1.0
+254,Credit Analyst C&I,Raymond James,22,21,1,0.9545454545454546
+255,Business System Analyst (NetSuite),"Essent Guaranty, Inc.",22,16,6,0.7272727272727273
+256,Research Programmer/Analyst - LTI - School of Computer Science,Carnegie Mellon University,17,12,5,0.7058823529411765
+257,Sr Corporate Financial Systems Analyst,FedEx,38,35,3,0.9210526315789473
+258,Project and Budget Analyst,Pittsburgh Regional Transit,28,27,1,0.9642857142857143
+259,Principal Administrative Analyst,"City of Hartford, CT",24,19,5,0.7916666666666666
+260,Financial Analyst 2,Yale University,24,21,3,0.875
+261,"Senior Manager, Financial Reporting & Partnership Accounting",DAY PITNEY,19,16,3,0.8421052631578947
+262,Pricing Analyst - Early Career,Lockheed Martin,18,15,3,0.8333333333333334
+263,Senior Security Operations Center (SOC) Analyst,ISO New England,59,53,6,0.8983050847457628
+264,"Senior Analyst, Risk Management",Voya Financial,29,26,3,0.896551724137931
+265,Pricing Analyst,Nefco Corporation,29,29,0,1.0
+266,Research Data Specialist - Geospatial Solutions,Yale University,37,37,0,1.0
+267,DATA ANALYST (ON-SITE),"Springfield Public Schools, MA",24,21,3,0.875
+268,Tariff and FP&A Balance Sheet Analyst - Military Engines (Onsite),Pratt & Whitney,19,18,1,0.9473684210526315
+269,"Senior Manager, Network Performance",Oscar Health,30,22,8,0.7333333333333333
+270,Compensation and HRIS Analyst,Hospital for Special Care,23,23,0,1.0
+271,Planning Analyst (Hybrid),State of Connecticut,10,9,1,0.9
+272,Compliance Specialist,Way Finders,19,12,7,0.631578947368421
+273,Program Representative (Springfield & Northampton),Way Finders,15,8,7,0.5333333333333333
+274,"Housing Quality Standards (HQS) Inspector - Amherst, MA",McCright & Associates,21,15,6,0.7142857142857143
+275,Lead Pre Kindergarten Teacher-Brookfield Location,The Goddard School,17,8,9,0.47058823529411764
+276,Leila Day Afternoon Teacher Assistant Kindergarten,Leila Day Nurseries,17,11,6,0.6470588235294118
+277,Community Life Service Coordinator,The Community Builders,20,17,3,0.85
+278,Associate Dean of Campus Operations,Connecticut State Community College,12,12,0,1.0
+279,Administrative Services Assistant,Connecticut State Community College,21,18,3,0.8571428571428571
+280,Executive Director of Operations - Assisted Living,Benchmark Senior Living,22,17,5,0.7727272727272727
+281,Preschool Assistant Teacher,Interfaith Early Learning Center,25,20,5,0.8
+282,"Associate Research Director, Health Policy Impact Lab",Yale University,22,21,1,0.9545454545454546
+283,Athletic Department Assistant (Casual Position),Amherst College,15,14,1,0.9333333333333333
+284,Manufacturing HR Business Partner,BIC,21,18,3,0.8571428571428571
+285,Associate Vice President for Facilities Operations and Management,Connecticut State Community College,16,14,2,0.875
+286,"Senior Manager, Origination - Environmental Infrastructure",Connecticut Green Bank,23,21,2,0.9130434782608695
+287,Assisted Living PT Maintenance Technician,Benchmark Senior Living,13,8,5,0.6153846153846154
+288,"Analyst, FP&A - Aetna Technology",CVS Health,20,16,4,0.8
+289,"Associate, Enterprise Contracting Center",KPMG,22,19,3,0.8636363636363636
+290,H#12987 Pega Lead Business Architect,"Corporate Systems Associates, Inc.",29,24,5,0.8275862068965517
+291,Diagnostics Prognostics Health Management Commercial Analytics and Sr. Data Engineer P3 (Onsite),Pratt & Whitney,19,16,3,0.8421052631578947
+292,Program Analyst (Recovery Coordinator),U.S. Small Business Administration,11,5,6,0.45454545454545453
+293,Data Systems Administrator and Analyst,The Family Security Plan,30,29,1,0.9666666666666667
+294,F135 Product Support Provider Analyst (Onsite),Pratt & Whitney,19,15,4,0.7894736842105263
+295,Investment Analyst – Trading Assistant / Junior Trader - Hybrid,The Cigna Group,25,18,7,0.72
+296,Emergency Department - Secretary/Technician - Per Diem,Mass General Brigham,8,6,2,0.75
+297,Data Analyst with AI,Infosys,24,18,6,0.75
+298,"Director, Clinical Laboratory",Mass General Brigham,18,16,2,0.8888888888888888
+299,Patient Care Coordinator/Scheduler,Mass General Brigham,11,10,1,0.9090909090909091
+300,Histology Technician (ASCP Certified),Mass General Brigham,17,12,5,0.7058823529411765
+301,"Manager, AI Data Engineering",The Hartford,42,35,7,0.8333333333333334
+302,Business Intelligence & Data Quality Manager,Nefco Corporation,42,35,7,0.8333333333333334
+303,Data Engineer - Manager,PwC,30,25,5,0.8333333333333334
+304,"Project Cost Analyst, Transmission (Hybrid Schedule)",Eversource Energy,20,16,4,0.8
+305,"Project Cost Analyst, Transmission (Hybrid Schedule)",Eversource Energy,20,16,4,0.8
+306,Sales Intern,Crum & Forster,19,15,4,0.7894736842105263
+307,Anticipated Openings 2026-2027 Behavior Specialist,"Springfield Public Schools, MA",19,15,4,0.7894736842105263
+308,Board Certified Behavior Analyst in New Haven County CT,ABA A Step At A Time Care,19,13,6,0.6842105263157895
+309,Board Certified Behavior Analyst in Hartford County CT,ABA A Step At A Time Care,19,14,5,0.7368421052631579
+310,Board Certified Behavior Analyst in New London County CT,ABA A Step At A Time Care,20,13,7,0.65
+311,Business Intelligence Analyst Sr (Sr Business Development Analyst),MAPFRE Insurance,39,33,6,0.8461538461538461
+312,"Clinic/Practice Assistant, Orthopedics",Mass General Brigham,15,9,6,0.6
+313,Board Certified Behavior Analyst,Venture Community Services,26,23,3,0.8846153846153846
+314,"Specialist, Business Analyst",Pearson,24,23,1,0.9583333333333334
+315,Director - Data Science & Analytics,Avangrid,40,33,7,0.825
+316,Clinic/Practice Assistant II,Mass General Brigham,19,14,5,0.7368421052631579
+317,Sourcing & Procurement Marketing Manager - NASPFY26,Accenture,20,18,2,0.9
+318,Regulatory Analyst,Yale University,25,21,4,0.84
+319,Information Security Analyst,Wesleyan University,42,36,6,0.8571428571428571
+320,Associate Vice President for Business Affairs/Assistant Treasurer,Scripps College,22,21,1,0.9545454545454546
+321,Technician - Maintenance,Benchmark Senior Living,15,8,7,0.5333333333333333
+322,Sr. Leasing Sales Support Assoc,Bank of America,19,17,2,0.8947368421052632
+323,"Senior CRM Associate, Spanish",DraftKings,19,16,3,0.8421052631578947
+324,Rejection and Denial Analysis Associate,athenahealth,23,19,4,0.8260869565217391
+325,Financial Analyst Co-op (July - Dec 2026),"The TJX Companies, Inc.",16,11,5,0.6875
+326,Product Deployment Analyst II,GEICO,29,27,2,0.9310344827586207
+327,Senior SOAR Engineer,Chenega Corporation,47,43,4,0.9148936170212766
+328,Senior Business Manager,Capital One,21,19,2,0.9047619047619048
+329,Business Director - GenAI Management Strategy,Capital One,25,22,3,0.88
+330,Senior Manager Data Scientist,Capital One,33,31,2,0.9393939393939394
+331,Senior Business Manager - GenAI Management Strategy,Capital One,29,28,1,0.9655172413793104
+332,"Senior Associate, Compensation Analytics",Capital One,34,32,2,0.9411764705882353
+333,Capital Markets & Underwriting Analyst,wnc Inc,24,20,4,0.8333333333333334
+334,Lead Data Engineer,Elder Research Inc,40,38,2,0.95
+335,Lead Risk Analyst,Taurus Search,17,17,0,1.0
+336,ROC Analyst,Standard Solar Inc,23,19,4,0.8260869565217391
+337,"Program Cost Analyst (Hybrid- Annapolis, MD)",,23,17,6,0.7391304347826086
+338,"Program Cost Analyst (Hybrid- Annapolis, MD)",,23,17,6,0.7391304347826086
+339,Manager of Supply Chain 2,Northrop Grumman,26,21,5,0.8076923076923077
+340,Management Analyst II,"Baltimore County, MD",14,9,5,0.6428571428571429
+341,Sr. Financial Analyst - AWS Data Center Infrastructure Finance,Amazon.com,25,21,4,0.84
+342,"Finance Manager, Amazon Leo, Leo Procurement Finance",Amazon.com,18,13,5,0.7222222222222222
+343,"Senior Financial Analyst, USNS",Amazon.com,22,17,5,0.7727272727272727
+344,"Senior Finance Analyst, Amazon Leo, Leo Procurement Finance",Amazon.com,18,13,5,0.7222222222222222
+345,"Sales Compensation Systems Analyst, Amazon Web Services",Amazon Web Services,16,14,2,0.875
+346,"Senior Financial Analyst, Inbound Transportation",Amazon.com,22,17,5,0.7727272727272727
+347,Enterprise Modeling and Analytics - Quantitative Engineering - Senior Associate,Fannie Mae,32,32,0,1.0
+348,Enterprise Modeling and Analytics - Quantitative Engineering - Senior Associate,Fannie Mae,28,28,0,1.0
+349,Senior FDG Analyst,"GC Associates USA, LLC",22,18,4,0.8181818181818182
+350,Program Associate,The United States-Indonesia Society (USINDO),33,33,0,1.0
+351,Enterprise Account Manager,CoolSys,23,21,2,0.9130434782608695
+352,Deli/Bakery Manager,Sodexo,14,14,0,1.0
+353,Industry X - Technical Teamcenter Architect,Accenture,40,32,8,0.8
+354,Safety Superintendent,MCN Build,15,12,3,0.8
+355,Portfolio Analyst,Stifel,22,18,4,0.8181818181818182
+356,Associate Energy Storage Engineer (on-call; hybrid),ICF,24,23,1,0.9583333333333334
+357,Senior Analyst Force Development,GC Associates USA,28,23,5,0.8214285714285714
+358,Associate Creative Director,"Berkeley Research Group, LLC",21,18,3,0.8571428571428571
+359,"Senior Associate, Forensic Data & Analytics - Risk Advisory",Ankura,24,23,1,0.9583333333333334
+360,"Industrial Hygiene Risk Manager, Worldwide Industrial Hygiene",Amazon.com,30,26,4,0.8666666666666667
+361,"Delivery Consultant – SAP GenAI/ML, Professional Services, SAP",Amazon Web Services,34,28,6,0.8235294117647058
+362,Commercial Credit Underwriter,EagleBank,16,12,4,0.75
+363,Management Analyst - Executive Office,LMI,25,17,8,0.68
+364,IT Technology Support Analyst,Northern VA Community College,29,23,6,0.7931034482758621
+365,"Associate Corporate Quality Manager, Laboratories","American Sugar Refining, Inc.",29,26,3,0.896551724137931
+366,Financial Management Analyst,US Defense Health Agency,18,14,4,0.7777777777777778
+367,Principal Pricing Analyst,Nightwing,26,21,5,0.8076923076923077
+368,Analytic Data Engineer,CVS Health,27,25,2,0.9259259259259259
+369,Contract Support Analyst,Prescient Edge,8,3,5,0.375
+370,Health Services Researcher,US News & World Report,17,15,2,0.8823529411764706
+371,CMMC Certified Assessor (CCA),KTL Solutions,31,24,7,0.7741935483870968
+372,Security and Compliance Analyst,KTL Solutions,37,27,10,0.7297297297297297
+373,Cleared - Financial Analyst (All Levels),Noblis,18,14,4,0.7777777777777778
+374,Recruitment Program Analyst,Prince George's County,14,13,1,0.9285714285714286
+375,Data Analyst,National Alliance on Mental Illness,32,27,5,0.84375
+376,Business Solution Analyst (Vice Provost of Education),Johns Hopkins University,25,22,3,0.88
+377,GEOINT Analyst,MANTECH,33,24,9,0.7272727272727273
+378,"Programmer Analyst, ATM G-3/5/7",Yorktown Systems Group,15,14,1,0.9333333333333333
+379,"Systems Analyst, ATM G-3/5/7",Yorktown Systems Group,16,11,5,0.6875
+380,"Senior Analyst (Staff Support at Government Locations), ATM G-3/5/7",Yorktown Systems Group,20,16,4,0.8
+381,"Senior Analyst/Functional Analyst (Vendor Location), ATM G-3/5/7",Yorktown Systems Group,23,22,1,0.9565217391304348
+382,Senior FIOA Analyst,,16,14,2,0.875
+383,Senior FOIA Analyst,,17,15,2,0.8823529411764706
+384,All-Source Intelligence Analyst,MTSI,35,31,4,0.8857142857142857
+385,"Senior Threat Intelligence Analyst, SEAR",Apple,19,17,2,0.8947368421052632
+386,Part time Tier 2 Incident Response Analyst (Weekend Nights),Tyto Athene,39,34,5,0.8717948717948718
+387,Senior Business Analyst (Remote),CareFirst BlueCross BlueShield,16,13,3,0.8125
+388,"External Events Manager, AWS Communications Team",Amazon.com,36,31,5,0.8611111111111112
+389,"Security Engineer II, US Amazon Dedicated Cloud Security",Amazon Web Services,20,15,5,0.75
+390,"Security Engineer II, US Amazon Dedicated Cloud Security",Amazon Web Services,21,17,4,0.8095238095238095
+391,Data Analyst 2 - 95087,,28,20,8,0.7142857142857143
+392,Budget and Policy Analyst - Ref #EX-MH-08,,22,18,4,0.8181818181818182
+393,Budget Examiner - Ref #EX-MH-08,,21,18,3,0.8571428571428571
+394,Budget Examiner - Ref #EX-PP-06,,24,20,4,0.8333333333333334
+395,Budget and Policy Analyst - Ref #EX-PP-06,,23,20,3,0.8695652173913043
+396,Budget and Policy Analyst (EX-HI-07),,25,22,3,0.88
+397,Data Analyst 2 - 289,,36,34,2,0.9444444444444444
+398,Budget Examiner - Ref #EX-HI-07,,24,21,3,0.875
+399,Budget and Policy Analyst - Ref #EX-HI-07,,24,21,3,0.875
+400,Data Analyst 1,,39,32,7,0.8205128205128205
+401,Data Analyst 1 - 12348,,30,22,8,0.7333333333333333
+402,"Data Analyst 3, Box PIMS-1045/04334",,23,20,3,0.8695652173913043
+403,Data Analyst 1/Trainee 1/Trainee 2,,26,23,3,0.8846153846153846
+404,Data Analyst 1 - Division of Confidential Investigations,,21,16,5,0.7619047619047619
+405,Intern(RESEARCH),Civil Service Employees Association,14,12,2,0.8571428571428571
+406,"Program Research Specialist 2 (NY HELPS), OSEA-124/13703",,24,21,3,0.875
+407,Network Engineer HV-NTPI-9791,Hudson Valley Community College,41,38,3,0.926829268292683
+408,(USA) Asset Protection Operations Coach,Walmart,26,20,6,0.7692307692307693
+409,System Administrator HV-NTPI-9842,Hudson Valley Community College,36,33,3,0.9166666666666666
+410,Program Assistant HV-CS-2326,Hudson Valley Community College,10,5,5,0.5
+411,"Transportation Construction Inspector 1, 2, or 3 (Asset Mngt & Inspection Bureau)",,18,13,5,0.7222222222222222
+412,Deputy Commissioner for Shared Services - VID 208734,,17,15,2,0.8823529411764706
+413,Investigative Specialist 1 Beverage Control (NY HELPS) - VID 208653,,16,14,2,0.875
+414,"Transportation Construction Inspector 1, 2, or 3 (Construction Bureau)",,33,30,3,0.9090909090909091
+415,"Associate, Enterprise Contracting Center",KPMG,22,19,3,0.8636363636363636
+416,QC Raw Materials Sampling Analyst,Eurofins,20,15,5,0.75
+417,Computer IT Support Analyst,New York State Senate,26,21,5,0.8076923076923077
+418,QC Gas Sampling Analyst,Eurofins,23,16,7,0.6956521739130435
+419,Cell Core Analyst,Eurofins,19,13,6,0.6842105263157895
+420,Digital Servicing Business Technology Senior Manager,KeyBank,22,20,2,0.9090909090909091
+421,Business Systems Analyst 1,,20,16,4,0.8
+422,"Student Assistant Internship (HESC), Ref# 10846",,34,30,4,0.8823529411764706
+423,"Student Assistant Internship (HESC), Ref# 10845",,32,28,4,0.875
+424,Advancement Data and Reporting Analyst,Williams College,29,23,6,0.7931034482758621
+425,Assistant Penetration Tester,,43,37,6,0.8604651162790697
+426,Information Technology Specialist 4 Database - 10257,,24,19,5,0.7916666666666666
+427,Employee Navigator Support Analyst (Remote),Patriot Growth Insurance Services,14,14,0,1.0
+428,Data Engineer - Manager,PwC,30,25,5,0.8333333333333334
+429,Business Systems Analyst 2,,26,18,8,0.6923076923076923
+430,"Specialist, Business Analyst",Pearson,24,23,1,0.9583333333333334
+431,Business Systems Analyst 1 (HELPS) - VID 208920,,20,11,9,0.55
+432,Sourcing & Procurement Marketing Manager - NASPFY26,Accenture,20,18,2,0.9
+433,Engineering Support Specialist - Software Asset Management,General Dynamics Mission Systems,24,18,6,0.75
+434,Summer 2026 MSC Tax Credits and Technology Consulting Internship,The Bonadio Group,17,15,2,0.8823529411764706
+435,"Associate Analyst, Finance",Nassau Financial Group,31,26,5,0.8387096774193549
+436,Deployment and Integration Group,General Dynamics Mission Systems,25,23,2,0.92
+437,Sr Principal Engineering Support Specialist,General Dynamics Mission Systems,30,19,11,0.6333333333333333
+438,Business Systems Analyst 2 Health - EMS and Trauma Data Systems Unit Manager (BEMS) (NYHELPS) - 52413,,36,30,6,0.8333333333333334
+439,Special Assistant (Assistant Director Counter Foreign Malign Influence),,18,16,2,0.8888888888888888
+440,Financial Analyst,Landmark Wealth Management,17,11,6,0.6470588235294118
+441,"Business & Finance Instructor (Part Time, After School, In-Person)",Concorde Education,16,13,3,0.8125
+442,Coordinator of Advanced Manufacturing Programs,Genesee Community College,15,13,2,0.8666666666666667
+443,"Grants Associate, Part-time",Genesee Community College,16,12,4,0.75
+444,Senior Vice President Quality and Safety,Catholic Health System,23,21,2,0.9130434782608695
+445,Financial Representative Entry Level,,21,18,3,0.8571428571428571
+446,Insurance Agent with Support,,19,15,4,0.7894736842105263
+447,Financial Services Associate,Moldenhauer & Associates,21,19,2,0.9047619047619048
+448,(USA) Asset Protection Operations Coach,Walmart,26,20,6,0.7692307692307693
+449,Teacher II in Training,Agri-Business Child Development,11,6,5,0.5454545454545454
+450,NYC Regional Admissions Specialist,Genesee Community College,9,3,6,0.3333333333333333
+451,Animal Management Instructor,Niagara County Community College,16,12,4,0.75
+452,Digital Servicing Business Technology Senior Manager,KeyBank,21,19,2,0.9047619047619048
+453,Digital Servicing Business Technology Senior Manager,KeyBank,22,20,2,0.9090909090909091
+454,Program Analyst (Recovery Coordinator),U.S. Small Business Administration,12,5,7,0.4166666666666667
+455,Recovery Analyst,Centivo,13,12,1,0.9230769230769231
+456,Laboratory Analyst - Technician,Washington Mills,15,10,5,0.6666666666666666
+457,Incentive Ops Analyst-System Administrator,KeyBank,24,19,5,0.7916666666666666
+458,IT Business Analyst - Commercial Payments,KeyBank,21,17,4,0.8095238095238095
+459,Wholesale Lending Data Concern Management Analyst,Citi,20,17,3,0.85
+460,Entry Level Wholesale Lending Data Concern Management Analyst,Citi,18,13,5,0.7222222222222222
+461,Senior Talent Insights Analyst,"Moog, Inc",29,24,5,0.8275862068965517
+462,Pricing & Cost Analyst I,"Coast Professional, Inc.",22,19,3,0.8636363636363636
+463,Data Engineer - Manager,PwC,30,25,5,0.8333333333333334
+464,Regional Compliance Officer - Key Investment Services (KIS),KeyBank,22,17,5,0.7727272727272727
+465,Securities and Derivatives Senior Analyst,Citi,22,19,3,0.8636363636363636
+466,Involuntary Corporate Actions Asset Servicing Intermediate Associate Analyst Hybrid,Citi,18,14,4,0.7777777777777778
+467,Voluntary Corporate Action Asset Servicing Intermediate Associate Analyst Hybrid,Citi,23,18,5,0.782608695652174
+468,Business Analytics Ld Analyst - C13 - GETZVILLE,Citi,29,27,2,0.9310344827586207
+469,"Analyst I, Laboratory",Materion,24,19,5,0.7916666666666666
+470,CAM Analyst I,M&T Bank,17,14,3,0.8235294117647058
+471,Senior Compliance Risk Analyst,Citi,28,21,7,0.75
+472,Derivative Margins Cash and Collateral Management Intermediate Analyst,Citi,24,18,6,0.75
+473,Senior Business Application Specialist,The Arc Erie County New York,20,18,2,0.9
+474,Financial Accountant,The Arc Erie County New York,22,19,3,0.8636363636363636
+475,Central Access Associate - Temporary,Roswell Park Comprehensive Cancer Center,22,18,4,0.8181818181818182
+476,Lead Product Analyst,Deloitte,17,13,4,0.7647058823529411
+477,Summer 2026 MSC Tax Credits and Technology Consulting Internship,The Bonadio Group,16,14,2,0.875
+478,Regulatory Analyst,WILLSON INTERNATIONAL LIMITED,23,22,1,0.9565217391304348
+479,CAM Analyst II,M&T Bank,15,12,3,0.8

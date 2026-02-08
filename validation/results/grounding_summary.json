@@ -1,0 +1,40 @@
+{
+  "overall": {
+    "total_skills_checked": 11274,
+    "total_grounded": 9470,
+    "total_ungrounded": 1804,
+    "grounding_rate": 0.8399858080539294
+  },
+  "category_stats": {
+    "technical_skills": {
+      "total": 3259,
+      "grounded": 3058,
+      "ungrounded": 201,
+      "grounding_rate": 0.938324639459957
+    },
+    "soft_skills": {
+      "total": 3679,
+      "grounded": 2376,
+      "ungrounded": 1303,
+      "grounding_rate": 0.6458276705626529
+    },
+    "certifications": {
+      "total": 247,
+      "grounded": 234,
+      "ungrounded": 13,
+      "grounding_rate": 0.9473684210526315
+    },
+    "domain_knowledge": {
+      "total": 4089,
+      "grounded": 3802,
+      "ungrounded": 287,
+      "grounding_rate": 0.929811689899731
+    }
+  },
+  "match_type_counts": {
+    "exact": 6947,
+    "not_found": 1804,
+    "substring": 2393,
+    "expansion": 130
+  }
+}

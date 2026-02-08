@@ -1,0 +1,465 @@
+skill,times_ungrounded
+Teamwork,258
+Problem Solving,254
+Communication,140
+Collaboration,85
+Leadership,76
+Attention To Detail,34
+Cross-Functional Collaboration,30
+Mentoring,29
+Strategic Thinking,28
+Financial Modeling,23
+Multitasking,21
+Adaptability,20
+Relationship Building,19
+Analytical Thinking,19
+Attention to Detail,17
+Conflict Resolution,13
+Prioritization,11
+Bachelor's Degree,10
+Regulatory Compliance,10
+Presentation Skills,9
+Customer Service,9
+Organization,9
+Supervision,9
+Cross-functional Collaboration,9
+Coaching,8
+Data Modeling,7
+Strategic Planning,7
+Financial Planning,7
+Microsoft Office,6
+Artificial Intelligence,6
+Test Planning,6
+Go-To-Market Strategy,6
+Coordination,6
+SQL,5
+Healthcare Operations,5
+Stakeholder Collaboration,5
+Data Visualization,5
+Self-Motivation,5
+Task Prioritization,5
+Stakeholder Management,5
+Project Coordination,4
+Cost-Benefit Analysis,4
+Healthcare Administration,4
+Self-Starter,4
+Written Communication,4
+Documentation,4
+Forecasting,4
+Dashboard Development,4
+Facilitation,4
+Report Writing,4
+Associate's Degree,4
+Pricing Strategy,4
+Critical Thinking,4
+Negotiation,4
+Storytelling,3
+Retail Operations,3
+Patience,3
+Multi-tasking,3
+Military Operations,3
+Renewable Energy,3
+Flexibility,3
+Troubleshooting,3
+Cybersecurity,3
+Proofreading,3
+Security+,3
+Team Coordination,3
+Predictive Modeling,3
+Budgeting,3
+Java 11+,3
+OAuth 2.0,3
+Excel,3
+Skill-Based Assessment,3
+Risk Assessment,3
+Empathy,3
+Insurance-Funded Protocols,3
+Quality Assurance,3
+Requirements Elicitation,3
+Learning Agility,3
+Financial Reporting,3
+Resilience Planning,2
+Project Management,2
+Collateral Valuation,2
+DFARS 252.204-7012,2
+Public Speaking,2
+CMMC 2.0,2
+Optical Services,2
+Active Listening,2
+Business Strategy,2
+Emergency Management,2
+Decision Making,2
+NIST SP 800-53A,2
+Cross-Functional Teamwork,2
+Financial Analysis,2
+Data Validation,2
+Government Contracting,2
+UAS/C-UAS Technologies,2
+Econometrics,2
+Treatment Planning,2
+Master's Degree,2
+Reliability,2
+Creative Thinking,2
+Detail-Oriented,2
+Meeting Coordination,2
+Commercial Lending,2
+Federal Acquisition Regulation (FAR),2
+NIST SP 800-171,2
+MBA,2
+NIST SP 800-171A,2
+NIST SP 800-53,2
+Compliance,2
+Willingness To Learn,2
+Cleanroom Operations,2
+Vulnerability Assessment,2
+Creativity,2
+Process Modeling,2
+System Architecture,2
+VB-MAPP,2
+Verbal Communication,2
+Malware Analysis,2
+Research Methodology,2
+Angular 12+,2
+Fiscal Planning,2
+Process Improvement,2
+Higher Education,2
+Actuarial Science,2
+Follow-Through,2
+Time Management,2
+Process Mapping,2
+Procedure Following,2
+PowerPoint,2
+Priority Management,2
+Cash Reconciliation,1
+Connecticut LBA,1
+Energy Sector,1
+Asset-Liability Matching,1
+Database Querying,1
+Business Acumen,1
+Social-Emotional-Behavioral Support,1
+K-12 Education,1
+Holdings Reconciliation,1
+Nature-Based Solutions,1
+Value-Based Care,1
+Self-Service Analytics,1
+CySA+,1
+Data Integration,1
+Evidence-Based Practices,1
+CPT Codes,1
+MITRE ATT&CK,1
+Data Transformation,1
+Medical Administration,1
+Budget Management,1
+Cost Modeling,1
+Natural Language Processing,1
+Energy Industry,1
+Control Functions,1
+Urban Policy,1
+Innovation,1
+Adobe,1
+Confidentiality Management,1
+Self-Serve Analytics,1
+Customer-Centric Approach,1
+Machine Learning,1
+Advocacy,1
+Physics-Based Modeling,1
+Single Sign-On (SSO),1
+Financial Regulations,1
+Diversity And Inclusion,1
+Trauma-Informed Care,1
+Developmental Psychology,1
+Cultural Sensitivity,1
+Multi-Cultural Education,1
+Query Optimization,1
+Microsoft Excel,1
+Lesson Planning,1
+Workflow Automation,1
+Oral Communication,1
+Socio-Emotional Development,1
+Hand-Held Devices,1
+Work-Order System,1
+Foreign Exchange,1
+Portfolio Management,1
+Back-office Operations,1
+HUD Budgeting,1
+Note-Taking,1
+Microscopy,1
+Report Creation,1
+ICD-10,1
+HCPCS Codes,1
+Histotechnologist (HTL(ASCP)),1
+CI/CD,1
+Evidence-Based Policy,1
+DoDI 5000.2,1
+Equipment Operation,1
+Risk Identification,1
+Group Policy Objects (GPO),1
+Labor Relations,1
+Independence,1
+Scripting,1
+Healthcare Policy,1
+PMI-PBA,1
+Training,1
+Team Supervision,1
+Tax-Loss Harvesting,1
+Differentiated Instruction,1
+Security Architecture,1
+Influencer Programs,1
+Security Operations Center (SOC),1
+Professionalism,1
+Technical Leadership,1
+Analytical Methods,1
+Community Engagement,1
+Multi-INT Analysis,1
+Oral Presentation,1
+PDT,1
+Clerical Operations,1
+Risk Mitigation,1
+Self-Motivated Learning,1
+Flowcharting,1
+Bachelor's Of Science,1
+Security Administration,1
+Pentest+,1
+Bachelor's Of Technology,1
+Non-Profit,1
+Augmented Reality/Virtual Reality,1
+Forecasting Models,1
+Media Preparation,1
+Welding Inspection,1
+Cell Culture,1
+End-User IT Support,1
+Customer Support,1
+Electro-Mechanical Systems,1
+Multi-Tasking,1
+Consulting,1
+Manpower Planning,1
+Observation,1
+Academic Advising,1
+Fraud Investigation,1
+Chemical Safety,1
+Activity-Based Intelligence,1
+Omni-Channel Creative,1
+Army Operations,1
+DOTML-PF,1
+Requirements Validation,1
+R&D Operations,1
+Workshop Facilitation,1
+Safety Awareness,1
+Consultative Selling,1
+Presentation,1
+International Trade,1
+Data Extraction,1
+Technical Consulting,1
+Tax-Exempt Bonds,1
+Backtesting,1
+P&L Management,1
+Large Language Models,1
+Air-Gapped Environments,1
+Classified Environments,1
+Proactive Approach,1
+Design Systems,1
+Handling Ambiguity,1
+CSP,1
+Statistical Modeling,1
+Test-Driven Development,1
+Reporting Automation,1
+Network+,1
+A+,1
+Ethical Judgment,1
+Web-Based Applications,1
+ICP-MS,1
+Human-Computer Interaction,1
+Fixed Price Contracts,1
+Noise Assessment,1
+Power Query,1
+System Patching,1
+ICP-OES,1
+macOS,1
+Department of Homeland Security,1
+Government Operations,1
+Word,1
+C&I Lending,1
+Procure-To-Pay,1
+Autism Spectrum Disorder,1
+Open-Source Development,1
+Motivation,1
+Agility,1
+KYC Requirements,1
+SOX Compliance,1
+Supply Chain Management,1
+Contract Negotiation,1
+FP&A,1
+Data Interpretation,1
+Know Your Customer (KYC),1
+Fraud Detection,1
+Anti-Money Laundering (AML),1
+Cloud Computing,1
+Log Analytics,1
+Open-Telemetry,1
+Stock Trading,1
+Proposal Coordination,1
+Dun & Bradstreet,1
+Consumer-Facing Products,1
+Advertising Technology,1
+Distributed Systems,1
+Dependability,1
+Filing Systems,1
+Cross-Functional Partnership,1
+Non-Profit Operations,1
+CLIA Regulations,1
+Interviewing,1
+Microsoft Teams,1
+Healthcare,1
+Editing,1
+Trauma-Informed Approaches,1
+Community-Based Research,1
+Healthcare Privacy,1
+Privacy Regulations,1
+Interpersonal Skills,1
+Training Others,1
+Healthcare Ethics,1
+Program Development,1
+Stakeholder Engagement,1
+Scheduling Software,1
+Client Interaction,1
+Inventory Optimization,1
+Juris Doctor,1
+Sub-Advisory Agreements,1
+Software Development,1
+Detection Engineering,1
+Neural Networks,1
+Collections,1
+Payment Processing,1
+P&L Analysis,1
+Customer Engagement,1
+Data-Driven Decision Making,1
+IRR Calculation,1
+Economics,1
+Asset-Based Funding,1
+Credit-Linked Notes,1
+Asset-Backed Securities,1
+KYC Compliance,1
+Tax Reclamation,1
+Banking,1
+Commercial and Industrial (C&I) Lending,1
+Commercial Real Estate (CRE) Lending,1
+Moody's CreditLens,1
+Convertible Securities,1
+Process Auditing,1
+International Development,1
+Poverty Alleviation,1
+Data Entry,1
+Online Banking,1
+Requirements Definition,1
+Deal Structuring,1
+Risk-Adjusted Returns,1
+M&A,1
+C++,1
+MCP Framework,1
+Cloud Architecture,1
+Staffing Strategy,1
+Customer-Facing Services,1
+Driver-Based Forecasting,1
+Auditing,1
+Client Relations,1
+Workpaper Documentation,1
+Front-Of-House Management,1
+Results Orientation,1
+Data Reporting,1
+Court Testimony,1
+Licensing Regulations,1
+Self-Motivated,1
+Record Keeping,1
+Microsoft Word,1
+CAP Regulations,1
+Pre-Authorizations,1
+Pre-Certifications,1
+Digital Literacy,1
+Pass-Through Entity Taxation,1
+Tax Law,1
+Server Administration,1
+Node.js,1
+Data Cleaning,1
+Budget Planning,1
+Financial Forecasting,1
+Goal-Oriented,1
+Reading Comprehension,1
+Experience Design,1
+Healthcare Technology,1
+Data Warehousing,1
+Clinical Expertise,1
+Go-To-Market Strategies,1
+Follow-On Offerings,1
+Insurance Pre-Certification,1
+User-Centered Design,1
+Feedback Integration,1
+Prototyping,1
+Database Navigation,1
+Electronic Medical Records (EMR),1
+Customer Focus,1
+Applied Behavior Analysis (ABA),1
+System Administration,1
+Asset-Backed Finance,1
+Multi-Platform Environment,1
+Multi-State Tax,1
+Data Analysis,1
+VCF,1
+Impediment Removal,1
+Scrum Facilitation,1
+End-To-End Leadership,1
+Security Auditing,1
+Financial Services,1
+Thomson Reuters,1
+Behavioral Diagnosis,1
+Real-Time Payments,1
+Cross-Border Payments,1
+Big-Picture Thinking,1
+Field-Level Mapping,1
+File-Based Interfaces,1
+Angular v12+,1
+Wireframing,1
+CompTIA Security+,1
+Info*Engine,1
+Policy Analysis,1
+Database Maintenance,1
+Macroeconomic Analysis,1
+Judgment And Decision Making,1
+Cross-functional Teamwork,1
+Curiosity,1
+HC-R/RC-R Reporting,1
+Process Automation,1
+Audiology,1
+Epley Maneuver,1
+Vestibular Evoked Myogenic Potential,1
+Videonystagmography,1
+Auditory Brainstem Response,1
+Delegation,1
+Mouse Surgery,1
+Specimen Collection,1
+Care-P,1
+Following Direction,1
+Sample Preparation,1
+Customer Understanding,1
+Data Querying,1
+Automation,1
+Accounts Receivable,1
+M&A Processes,1
+PMP,1
+Hand-Eye Coordination,1
+Utility Operations,1
+Influence,1
+Registration Systems,1
+Buy-And-Bill Economics,1
+Payer Relations,1
+Financial Advisory,1
+Portfolio Strategy,1
+Consumer Packaged Goods (CPG),1
+Trust Building,1
+Client Consultation,1
+Insurance Industry,1
+Capital Markets,1
+Asset-Liability Management,1
+E-Commerce,1
+Internal Controls,1
+Credit Modeling,1
+Banking Operations,1
