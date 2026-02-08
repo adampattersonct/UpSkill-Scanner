@@ -39,7 +39,7 @@ JOB_TITLES = [
 
 REGIONS = "all"           # "Northeast", "West", "all", etc.
 POSTINGS_PER_CITY = 25    # 5 for testing, 25 for full runs
-SITE_NAMES = ["indeed"]   # Job board sources (required — no default)
+SITE_NAMES = ["", ""]     # Job board sources (required — no default; input lowercase and all one word ; use the big two)
 COST_LIMIT = 5.00         # Budget cap in USD
 ```
 
