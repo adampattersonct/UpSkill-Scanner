@@ -21,6 +21,7 @@ REGIONS = {
     "Northeast": [
         "New York, NY",
         "Boston, MA",
+        "Worcester, MA",
         "Philadelphia, PA",
         "Pittsburgh, PA",
         "Hartford, CT",
@@ -37,6 +38,7 @@ REGIONS = {
         "Nashville, TN",
         "Jacksonville, FL",
         "Tampa, FL",
+        "Orlando, FL",
         "Raleigh, NC",
         "Richmond, VA",
         "Orlando, FL",
