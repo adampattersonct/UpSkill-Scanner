@@ -12,14 +12,7 @@
 #  JOB TITLES TO SEARCH
 #  Change these to match your discipline / field of study
 # ──────────────────────────────────────────────────────────
-JOB_TITLES = [
-    "Entry level Economist",
-    "Economic Analyst",
-    "Economic Associate",
-    "Data Analyst Economics",
-    "Policy Analyst",
-    "Research Analyst",
-]
+JOB_TITLES = ["Entry level Economist", "Entry level Economics"]
 
 # Examples for other fields (uncomment one or write your own):
 #
@@ -47,6 +40,7 @@ REGIONS = "Northeast"
 #  Recommended: 5 for testing, 25 for full runs
 # ──────────────────────────────────────────────────────────
 POSTINGS_PER_CITY = 25
+SITE_NAMES = ["indeed", "linkedin"]  # Job board sources (options: "indeed", "linkedin", "zip_recruiter", "glassdoor")
 
 # ──────────────────────────────────────────────────────────
 #  AI MODEL
@@ -94,6 +88,7 @@ def build_command():
     cmd.extend(["--titles", ",".join(JOB_TITLES)])
     cmd.extend(["--regions", REGIONS])
     cmd.extend(["--n-per-city", str(POSTINGS_PER_CITY)])
+    cmd.extend(["--sites", ",".join(SITE_NAMES)])
     cmd.extend(["--model", MODEL])
     cmd.extend(["--cost-limit", str(COST_LIMIT)])
     cmd.extend(["--output-dir", OUTPUT_DIR])

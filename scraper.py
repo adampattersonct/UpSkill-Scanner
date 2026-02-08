@@ -6,11 +6,14 @@ from typing import List
 import pandas as pd
 from jobspy import scrape_jobs
 
-from config import REGIONS, SCRAPE_HOURS_OLD
+from config import DEFAULT_SITE_NAMES, REGIONS, SCRAPE_HOURS_OLD
 
 
 class JobScraper:
     """Scrapes job postings across US regions using python-jobspy."""
+
+    def __init__(self, site_names: List[str] = None):
+        self.site_names = site_names or DEFAULT_SITE_NAMES
 
     def scrape_region(
         self, region_name: str, titles: List[str], n_per_city: int
@@ -29,7 +32,7 @@ class JobScraper:
                 print(f"  Scraping '{title}' in {city}...")
                 try:
                     df = scrape_jobs(
-                        site_name=["indeed", "linkedin"],
+                        site_name=self.site_names,
                         search_term=title,
                         location=city,
                         results_wanted=n_per_city,

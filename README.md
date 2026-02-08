@@ -39,6 +39,7 @@ JOB_TITLES = [
 
 REGIONS = "all"           # "Northeast", "West", "all", etc.
 POSTINGS_PER_CITY = 25    # 5 for testing, 25 for full runs
+SITE_NAMES = ["indeed"]   # Job board sources (required — no default)
 COST_LIMIT = 5.00         # Budget cap in USD
 ```
 
@@ -83,6 +84,7 @@ python main.py --regions Northeast --n-per-city 3 --no-batch
 | `--model <model-id>` | Claude model to use |
 | `--cost-limit 10.00` | Override budget cap |
 | `--yes` | Skip confirmation prompts |
+| `--sites "a,b"` | Job board sources to scrape (required) |
 | `--no-batch` | Synchronous mode (slower, for debugging) |
 | `--no-filter` | Skip relevance filtering of scraped postings |
 | `--skip-scrape file.csv` | Reuse previously scraped data |
@@ -96,7 +98,7 @@ python main.py --regions Northeast --n-per-city 3 --no-batch
 JobSpy Scraper → Relevance Filter → Claude Batch API Extraction → Normalization → Aggregation → Visualizations
 ```
 
-1. **Scrape** — Collects job postings from Indeed and LinkedIn via `python-jobspy`
+1. **Scrape** — Collects job postings from public job boards via `python-jobspy` (you must specify which sites to scrape in `run.py` or via `--sites`)
 2. **Filter** — Removes off-topic postings (e.g., nurses, cooks returned for "Economic Associate") using title-based relevance filtering
 3. **Extract** — Sends each description to Claude (Haiku) via the Batch API to extract structured skills into 4 categories: technical, soft, certifications, domain knowledge
 4. **Reclassify** — Post-extraction fix for common misclassifications (e.g., cloud platforms like AWS moved from certifications to technical skills)

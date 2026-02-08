@@ -57,6 +57,12 @@ def parse_args():
         help=f"Max postings per city per title (default: {DEFAULT_N_PER_CITY})",
     )
     parser.add_argument(
+        "--sites",
+        type=str,
+        default=None,
+        help="Comma-separated job board sites (default: from config)",
+    )
+    parser.add_argument(
         "--model",
         type=str,
         default=None,
@@ -214,7 +220,8 @@ def main():
         print(f"  Loaded {len(df)} postings")
     else:
         print("Step 1: Scraping job postings...")
-        scraper = JobScraper()
+        site_names = [s.strip() for s in args.sites.split(",")] if args.sites else None
+        scraper = JobScraper(site_names=site_names)
         df = scraper.scrape_all_regions(
             titles=titles,
             n_per_city=args.n_per_city,

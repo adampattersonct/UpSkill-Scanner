@@ -19,29 +19,64 @@ RECLASSIFY_SKILLS = {
 
 REGIONS = {
     "Northeast": [
-        "New York, NY", "Boston, MA", "Philadelphia, PA", "Pittsburgh, PA",
-        "Hartford, CT", "Providence, RI", "Newark, NJ", "Baltimore, MD",
-        "Albany, NY", "Buffalo, NY"
+        "New York, NY",
+        "Boston, MA",
+        "Philadelphia, PA",
+        "Pittsburgh, PA",
+        "Hartford, CT",
+        "Providence, RI",
+        "Newark, NJ",
+        "Baltimore, MD",
+        "Albany, NY",
+        "Buffalo, NY",
     ],
     "Southeast": [
-        "Atlanta, GA", "Miami, FL", "Charlotte, NC", "Nashville, TN",
-        "Jacksonville, FL", "Tampa, FL", "Raleigh, NC", "Richmond, VA",
-        "Orlando, FL", "Charleston, SC"
+        "Atlanta, GA",
+        "Miami, FL",
+        "Charlotte, NC",
+        "Nashville, TN",
+        "Jacksonville, FL",
+        "Tampa, FL",
+        "Raleigh, NC",
+        "Richmond, VA",
+        "Orlando, FL",
+        "Charleston, SC",
     ],
     "Midwest": [
-        "Chicago, IL", "Detroit, MI", "Minneapolis, MN", "St. Louis, MO",
-        "Indianapolis, IN", "Columbus, OH", "Milwaukee, WI", "Kansas City, MO",
-        "Cincinnati, OH", "Cleveland, OH"
+        "Chicago, IL",
+        "Detroit, MI",
+        "Minneapolis, MN",
+        "St. Louis, MO",
+        "Indianapolis, IN",
+        "Columbus, OH",
+        "Milwaukee, WI",
+        "Kansas City, MO",
+        "Cincinnati, OH",
+        "Cleveland, OH",
     ],
     "South_Central": [
-        "Houston, TX", "Dallas, TX", "San Antonio, TX", "Austin, TX",
-        "New Orleans, LA", "Memphis, TN", "Oklahoma City, OK",
-        "Louisville, KY", "Birmingham, AL", "Little Rock, AR"
+        "Houston, TX",
+        "Dallas, TX",
+        "San Antonio, TX",
+        "Austin, TX",
+        "New Orleans, LA",
+        "Memphis, TN",
+        "Oklahoma City, OK",
+        "Louisville, KY",
+        "Birmingham, AL",
+        "Little Rock, AR",
     ],
     "West": [
-        "Los Angeles, CA", "San Francisco, CA", "Seattle, WA", "Denver, CO",
-        "Phoenix, AZ", "Portland, OR", "Las Vegas, NV", "San Diego, CA",
-        "Salt Lake City, UT", "Sacramento, CA"
+        "Los Angeles, CA",
+        "San Francisco, CA",
+        "Seattle, WA",
+        "Denver, CO",
+        "Phoenix, AZ",
+        "Portland, OR",
+        "Las Vegas, NV",
+        "San Diego, CA",
+        "Salt Lake City, UT",
+        "Sacramento, CA",
     ],
 }
 
@@ -55,6 +90,7 @@ DEFAULT_JOB_TITLES = [
     "Policy Analyst",
 ]
 DEFAULT_N_PER_CITY = 25
+DEFAULT_SITE_NAMES = ["", ""]
 MAX_DESCRIPTION_CHARS = 4000
 SCRAPE_HOURS_OLD = 168  # 1 week
 
