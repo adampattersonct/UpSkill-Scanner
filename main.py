@@ -381,7 +381,12 @@ def main():
             if region in region_matrix.columns:
                 viz.bar_chart_by_region(region, national_df, region_matrix)
 
-    viz.treemap_by_category(national_df)
+    viz.treemap_by_category(
+        national_df,
+        job_titles=titles,
+        regions=region_names,
+        total_postings=stats["total_postings"],
+    )
 
     # ===== SUMMARY =====
     print("\n" + "=" * 60)

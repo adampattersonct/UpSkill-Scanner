@@ -135,6 +135,9 @@ class SkillVisualizer:
         self,
         national_df: pd.DataFrame,
         filename: str = "skills_treemap.png",
+        job_titles: list = None,
+        regions: list = None,
+        total_postings: int = None,
     ) -> str:
         """Treemap of skills grouped by category."""
         if national_df.empty:
@@ -145,52 +148,94 @@ class SkillVisualizer:
         working_df = national_df[national_df["category"] != "certifications"]
 
         # Group by category so each category forms a solid color block
-        parts = []
-        for cat in ["technical_skills", "soft_skills", "domain_knowledge"]:
+        cat_order = ["technical_skills", "soft_skills", "domain_knowledge"]
+        cat_groups = {}
+        for cat in cat_order:
             group = working_df[working_df["category"] == cat]
             if not group.empty:
-                parts.append(group.nlargest(10, "count"))
-        top_per_cat = pd.concat(parts, ignore_index=True)
+                cat_groups[cat] = group.nlargest(10, "count")
 
-        if top_per_cat.empty:
+        if not cat_groups:
             print("  No skills to plot in treemap")
             return ""
 
-        labels = []
-        sizes = []
-        colors = []
+        # Collect all shown skills for legend
+        top_per_cat = pd.concat(cat_groups.values(), ignore_index=True)
 
-        for _, row in top_per_cat.iterrows():
-            # Single-line labels fit better in thin rectangular boxes
-            labels.append(f"{row['skill']} ({row['count']})")
-            sizes.append(row["count"])
-            colors.append(CATEGORY_COLORS.get(row["category"], "#999999"))
+        fig_w, fig_h = 16, 10
+        fig, ax = plt.subplots(figsize=(fig_w, fig_h))
 
-        fig, ax = plt.subplots(figsize=(16, 10))
+        # Two-level layout: allocate a vertical strip per category
+        # with a minimum width so smaller categories stay readable
+        min_share = 0.22
+        cat_totals = {cat: g["count"].sum() for cat, g in cat_groups.items()}
+        grand_total = sum(cat_totals.values())
 
-        # Compute rects first, then draw with per-box font sizing
-        normed = squarify.normalize_sizes(sizes, 16, 10)
-        rects = squarify.squarify(normed, 0, 0, 16, 10)
+        raw_shares = {cat: t / grand_total for cat, t in cat_totals.items()}
+        shares = {cat: max(min_share, s) for cat, s in raw_shares.items()}
+        share_sum = sum(shares.values())
+        shares = {cat: s / share_sum for cat, s in shares.items()}
 
-        for rect, label, color in zip(rects, labels, colors):
-            ax.add_patch(plt.Rectangle(
-                (rect["x"], rect["y"]), rect["dx"], rect["dy"],
-                facecolor=color, alpha=0.85, edgecolor="black", linewidth=2,
-            ))
-            # Scale font size based on box area
-            area_pct = (rect["dx"] * rect["dy"]) / (16 * 10)
-            fontsize = max(7, min(13, 7 + area_pct * 60))
-            ax.text(
-                rect["x"] + rect["dx"] / 2,
-                rect["y"] + rect["dy"] / 2,
-                label,
-                ha="center", va="center",
-                fontsize=fontsize,
-                fontweight="bold" if fontsize >= 9 else "normal",
-            )
+        # Draw each category strip, then squarify skills within it
+        x_offset = 0
+        for cat in cat_order:
+            if cat not in cat_groups:
+                continue
+            group = cat_groups[cat]
+            strip_w = shares[cat] * fig_w
+            color = CATEGORY_COLORS.get(cat, "#999999")
 
-        ax.set_xlim(0, 16)
-        ax.set_ylim(0, 10)
+            sizes = group["count"].tolist()
+            skill_names = [r["skill"] for _, r in group.iterrows()]
+            counts = [r["count"] for _, r in group.iterrows()]
+
+            normed = squarify.normalize_sizes(sizes, strip_w, fig_h)
+            rects = squarify.squarify(normed, x_offset, 0, strip_w, fig_h)
+
+            for rect, skill_name, count in zip(rects, skill_names, counts):
+                ax.add_patch(plt.Rectangle(
+                    (rect["x"], rect["y"]), rect["dx"], rect["dy"],
+                    facecolor=color, alpha=0.85, edgecolor="black", linewidth=2,
+                ))
+                area_pct = (rect["dx"] * rect["dy"]) / (fig_w * fig_h)
+                fontsize = max(7, min(13, 7 + area_pct * 60))
+
+                # Estimate if single-line label fits the box width
+                # ~0.11 units per character at fontsize 10 (heuristic)
+                label_single = f"{skill_name} ({count})"
+                char_w = 0.011 * fontsize
+                pad = 0.4  # padding inside box edges
+                avail_w = rect["dx"] - pad
+
+                if len(label_single) * char_w <= avail_w:
+                    # Fits on one line
+                    label = label_single
+                else:
+                    # Try smaller font on one line
+                    smaller = max(6, fontsize - 1.5)
+                    char_w_s = 0.011 * smaller
+                    if len(label_single) * char_w_s <= avail_w:
+                        fontsize = smaller
+                        label = label_single
+                    else:
+                        # Wrap: skill name on top, count below
+                        fontsize = max(6, fontsize - 1)
+                        label = f"{skill_name}\n({count})"
+
+                ax.text(
+                    rect["x"] + rect["dx"] / 2,
+                    rect["y"] + rect["dy"] / 2,
+                    label,
+                    ha="center", va="center",
+                    fontsize=fontsize,
+                    fontweight="bold" if fontsize >= 9 else "normal",
+                    linespacing=1.2,
+                )
+
+            x_offset += strip_w
+
+        ax.set_xlim(0, fig_w)
+        ax.set_ylim(0, fig_h)
 
         ax.set_title(
             "Skills by Category (size = frequency)",
@@ -215,6 +260,24 @@ class SkillVisualizer:
             fontsize=10,
             framealpha=0.9,
         )
+
+        # Add job titles and region info below legend
+        info_lines = []
+        if job_titles:
+            info_lines.append(f"Job titles: {', '.join(job_titles)}")
+        if regions:
+            info_lines.append(f"Regions: {', '.join(regions)}")
+        if total_postings is not None:
+            info_lines.append(f"n = {total_postings}")
+        if info_lines:
+            info_text = "  |  ".join(info_lines)
+            ax.text(
+                0.5, -0.08,
+                info_text,
+                ha="center", va="top",
+                fontsize=9, style="italic", color="#555555",
+                transform=ax.transAxes,
+            )
 
         plt.tight_layout()
         path = os.path.join(self.output_dir, filename)
