@@ -1,8 +1,8 @@
-# UpskillScan
+# Upskill-Scanner
 
 **Job Market Skill Intelligence Tool** — Scans job postings to identify in-demand skills for any discipline.
 
-UpskillScan scrapes entry-level job postings across 5 US regions (50 metro areas), uses Claude to extract and normalize skills, and produces publication-ready visualizations.
+Upskill-Scanner scrapes entry-level job postings across 5 US regions (50 metro areas), uses Claude to extract and normalize skills, and produces publication-ready visualizations.
 
 ## Quick Start
 
@@ -84,10 +84,48 @@ python main.py --regions Northeast --n-per-city 3 --no-batch
 | `--cost-limit 10.00` | Override budget cap |
 | `--yes` | Skip confirmation prompts |
 | `--no-batch` | Synchronous mode (slower, for debugging) |
+| `--no-filter` | Skip relevance filtering of scraped postings |
 | `--skip-scrape file.csv` | Reuse previously scraped data |
 | `--skip-extract file.csv` | Reuse previously extracted data |
 | `--resume-batch <id>` | Resume an interrupted batch |
 | `--output-dir path/` | Custom output directory |
+
+## Pipeline
+
+```
+JobSpy Scraper → Relevance Filter → Claude Batch API Extraction → Normalization → Aggregation → Visualizations
+```
+
+1. **Scrape** — Collects job postings from Indeed and LinkedIn via `python-jobspy`
+2. **Filter** — Removes off-topic postings (e.g., nurses, cooks returned for "Economic Associate") using title-based relevance filtering
+3. **Extract** — Sends each description to Claude (Haiku) via the Batch API to extract structured skills into 4 categories: technical, soft, certifications, domain knowledge
+4. **Reclassify** — Post-extraction fix for common misclassifications (e.g., cloud platforms like AWS moved from certifications to technical skills)
+5. **Normalize** — Groups synonyms via LLM (e.g., "MS Excel" / "Microsoft Excel" → "Excel")
+6. **Aggregate** — Counts skill frequency nationally and by region
+7. **Visualize** — Generates publication-ready bar charts, heatmaps, and treemaps
+
+## Validation
+
+The `validation/` folder contains three scripts for verifying extraction quality:
+
+```bash
+# Automated: checks if extracted skills appear in the source text
+python validation/grounding_check.py
+
+# Interactive: manually review 10 sampled postings for precision/recall/F1
+python validation/human_annotation.py --n 10
+
+# Statistical: Zipf distribution, outlier detection, category balance
+python validation/sanity_checks.py
+```
+
+| Script | What it checks | Mode |
+|---|---|---|
+| `grounding_check.py` | Are extracted skills actually in the job description? | Automated |
+| `human_annotation.py` | Precision, recall, F1 via human review | Interactive |
+| `sanity_checks.py` | Frequency distributions, outliers, category balance | Automated |
+
+Validation results are saved to `validation/results/`.
 
 ## Cost Safety
 
@@ -96,7 +134,7 @@ Three layers of protection:
 2. **Software limit**: `COST_LIMIT` in `run.py` (or `COST_LIMIT_USD` in `.env`) — tool aborts if exceeded
 3. **Pre-flight estimates**: Printed before each API batch
 
-Expected cost: ~$1-1.50 for a full 5-region run using Haiku + Batch API.
+Expected cost: ~$0.70 for a full region run using Haiku + Batch API.
 
 ## Outputs
 
@@ -105,10 +143,12 @@ All saved to `output/`:
 | File | Description |
 |---|---|
 | `raw_jobs.csv` | Scraped postings |
+| `filtered_jobs.csv` | Postings after relevance filtering |
 | `extracted_jobs.csv` | Postings with extracted skills |
 | `normalized_jobs.csv` | Skills after synonym normalization |
 | `national_ranking.csv` | Top skills ranked by frequency |
 | `regional_matrix.csv` | Skills x Region percentage matrix |
+| `category_breakdown.csv` | Skill counts by category |
 | `summary_stats.json` | Summary statistics |
 | `skill_mapping.json` | Raw-to-canonical skill mapping |
 | `top_skills_bar.png` | Bar chart of top 20 skills |
@@ -121,14 +161,19 @@ All saved to `output/`:
 ```
 ├── run.py               # Easy config & run (start here)
 ├── main.py              # CLI entry point with flags
-├── config.py            # Regions, defaults, prompts
+├── config.py            # Regions, defaults, prompts, reclassification rules
 ├── cost_tracker.py      # Budget tracking & limits
 ├── scraper.py           # JobSpy wrapper
+├── relevance_filter.py  # Post-scrape off-topic filtering
 ├── extractor.py         # Claude Batch API skill extraction
 ├── normalizer.py        # Skill synonym grouping
 ├── aggregator.py        # Counting & ranking
 ├── visualizer.py        # Chart generation
 ├── requirements.txt     # Python dependencies
 ├── .env.example         # API key template
+├── validation/          # Validation scripts
+│   ├── grounding_check.py
+│   ├── human_annotation.py
+│   └── sanity_checks.py
 └── output/              # All results saved here
 ```
