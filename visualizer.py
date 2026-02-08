@@ -141,10 +141,15 @@ class SkillVisualizer:
             print("  No data for treemap")
             return ""
 
-        # Get top skills per category
+        # Exclude certifications from treemap
+        working_df = national_df[national_df["category"] != "certifications"]
+
+        # Group by category so each category forms a solid color block
         parts = []
-        for cat, group in national_df.groupby("category"):
-            parts.append(group.nlargest(10, "count"))
+        for cat in ["technical_skills", "soft_skills", "domain_knowledge"]:
+            group = working_df[working_df["category"] == cat]
+            if not group.empty:
+                parts.append(group.nlargest(10, "count"))
         top_per_cat = pd.concat(parts, ignore_index=True)
 
         if top_per_cat.empty:
@@ -156,22 +161,36 @@ class SkillVisualizer:
         colors = []
 
         for _, row in top_per_cat.iterrows():
-            labels.append(f"{row['skill']}\n({row['count']})")
+            # Single-line labels fit better in thin rectangular boxes
+            labels.append(f"{row['skill']} ({row['count']})")
             sizes.append(row["count"])
             colors.append(CATEGORY_COLORS.get(row["category"], "#999999"))
 
-        fig, ax = plt.subplots(figsize=(14, 10))
+        fig, ax = plt.subplots(figsize=(16, 10))
 
-        squarify.plot(
-            sizes=sizes,
-            label=labels,
-            color=colors,
-            alpha=0.85,
-            text_kwargs={"fontsize": 9, "wrap": True},
-            ax=ax,
-            edgecolor="black",
-            linewidth=2,
-        )
+        # Compute rects first, then draw with per-box font sizing
+        normed = squarify.normalize_sizes(sizes, 16, 10)
+        rects = squarify.squarify(normed, 0, 0, 16, 10)
+
+        for rect, label, color in zip(rects, labels, colors):
+            ax.add_patch(plt.Rectangle(
+                (rect["x"], rect["y"]), rect["dx"], rect["dy"],
+                facecolor=color, alpha=0.85, edgecolor="black", linewidth=2,
+            ))
+            # Scale font size based on box area
+            area_pct = (rect["dx"] * rect["dy"]) / (16 * 10)
+            fontsize = max(7, min(13, 7 + area_pct * 60))
+            ax.text(
+                rect["x"] + rect["dx"] / 2,
+                rect["y"] + rect["dy"] / 2,
+                label,
+                ha="center", va="center",
+                fontsize=fontsize,
+                fontweight="bold" if fontsize >= 9 else "normal",
+            )
+
+        ax.set_xlim(0, 16)
+        ax.set_ylim(0, 10)
 
         ax.set_title(
             "Skills by Category (size = frequency)",
@@ -182,15 +201,17 @@ class SkillVisualizer:
 
         # Legend
         from matplotlib.patches import Patch
+        shown_cats = set(top_per_cat["category"])
         legend_elements = [
             Patch(facecolor=color, label=label)
             for label, color in CATEGORY_COLORS_BY_LABEL.items()
+            if any(cat for cat, c in CATEGORY_COLORS.items() if c == color and cat in shown_cats)
         ]
         ax.legend(
             handles=legend_elements,
             loc="upper center",
             bbox_to_anchor=(0.5, -0.02),
-            ncol=4,
+            ncol=len(legend_elements),
             fontsize=10,
             framealpha=0.9,
         )

@@ -1,5 +1,22 @@
 """Region definitions, defaults, and constants for UpskillScan."""
 
+# Skills that the LLM sometimes puts in the wrong category.
+# These are applied after extraction as a post-processing fix.
+# Format: "skill name (case-insensitive)" -> "correct_category"
+RECLASSIFY_SKILLS = {
+    "aws": "technical_skills",
+    "azure": "technical_skills",
+    "microsoft azure": "technical_skills",
+    "google cloud platform": "technical_skills",
+    "google cloud": "technical_skills",
+    "gcp": "technical_skills",
+    "snowflake": "technical_skills",
+    "databricks": "technical_skills",
+    "terraform": "technical_skills",
+    "docker": "technical_skills",
+    "kubernetes": "technical_skills",
+}
+
 REGIONS = {
     "Northeast": [
         "New York, NY", "Boston, MA", "Philadelphia, PA", "Pittsburgh, PA",
@@ -48,6 +65,12 @@ RULES:
 - Use title case for all skills (e.g., "Python", "Data Visualization")
 - Only include skills explicitly mentioned or clearly implied
 - Do NOT infer skills that aren't in the text
+
+CATEGORY DEFINITIONS (follow these strictly):
+- technical_skills: Tools, software, programming languages, platforms, methodologies, statistical methods (e.g., "Python", "Excel", "AWS", "Tableau", "Agile")
+- soft_skills: Interpersonal and transferable competencies (e.g., "Communication", "Leadership", "Problem Solving", "Teamwork")
+- certifications: ONLY formal certifications, licenses, or professional designations that require passing an exam or credentialing process (e.g., "CPA", "CFA", "PMP", "Series 7", "CISSP"). Do NOT include: software platforms (AWS, Azure, Snowflake belong in technical_skills), academic degrees (MBA, Bachelor's, Master's belong in domain_knowledge), or job titles (Registered Nurse, Scrum Master)
+- domain_knowledge: Subject matter expertise, academic degrees, and industry-specific knowledge areas (e.g., "Econometrics", "MBA", "Financial Modeling", "Healthcare Policy")
 
 Return ONLY valid JSON matching this schema:
 {{

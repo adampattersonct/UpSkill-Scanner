@@ -14,6 +14,7 @@ from config import (
     DEFAULT_JOB_TITLES,
     DEFAULT_MODEL,
     DEFAULT_N_PER_CITY,
+    RECLASSIFY_SKILLS,
     REGIONS,
 )
 from cost_tracker import CostLimitExceeded, CostTracker
@@ -22,6 +23,7 @@ from extractor import SkillExtractor
 from normalizer import SkillNormalizer
 from aggregator import SkillAggregator
 from visualizer import SkillVisualizer
+from relevance_filter import filter_relevance
 
 
 def parse_args():
@@ -100,7 +102,61 @@ def parse_args():
         default=None,
         help="Path to existing extracted CSV (skip LLM extraction)",
     )
+    parser.add_argument(
+        "--no-filter",
+        action="store_true",
+        help="Skip relevance filtering of scraped postings",
+    )
     return parser.parse_args()
+
+
+SKILL_COLUMNS = ["technical_skills", "soft_skills", "certifications", "domain_knowledge"]
+
+
+def reclassify_skills(df: pd.DataFrame) -> pd.DataFrame:
+    """Move misclassified skills between categories based on RECLASSIFY_SKILLS config."""
+    if not RECLASSIFY_SKILLS:
+        return df
+
+    # Build a lowercase lookup
+    remap = {k.lower(): v for k, v in RECLASSIFY_SKILLS.items()}
+    moved = 0
+
+    for idx, row in df.iterrows():
+        for source_col in SKILL_COLUMNS:
+            try:
+                skills = json.loads(row.get(source_col, "[]"))
+            except (json.JSONDecodeError, TypeError):
+                continue
+
+            to_move = []
+            for skill in skills:
+                target = remap.get(skill.lower())
+                if target and target != source_col:
+                    to_move.append((skill, target))
+
+            if not to_move:
+                continue
+
+            # Remove from source
+            for skill, _ in to_move:
+                skills.remove(skill)
+            df.at[idx, source_col] = json.dumps(skills)
+
+            # Add to target
+            for skill, target_col in to_move:
+                try:
+                    target_skills = json.loads(row.get(target_col, "[]"))
+                except (json.JSONDecodeError, TypeError):
+                    target_skills = []
+                if skill not in target_skills:
+                    target_skills.append(skill)
+                df.at[idx, target_col] = json.dumps(target_skills)
+                moved += 1
+
+    if moved:
+        print(f"  Reclassified {moved} skill entries across postings")
+    return df
 
 
 def main():
@@ -172,6 +228,16 @@ def main():
         raw_path = os.path.join(output_dir, "raw_jobs.csv")
         df.to_csv(raw_path, index=False)
         print(f"  Saved raw data: {raw_path} ({len(df)} postings)")
+
+    # ===== STEP 1.5: RELEVANCE FILTER =====
+    if not args.no_filter and not args.skip_extract:
+        print("\nStep 1.5: Filtering off-topic postings...")
+        pre_filter = len(df)
+        df = filter_relevance(df, search_titles=titles)
+        if len(df) < pre_filter:
+            filtered_path = os.path.join(output_dir, "filtered_jobs.csv")
+            df.to_csv(filtered_path, index=False)
+            print(f"  Saved filtered data: {filtered_path}")
 
     # ===== STEP 2: EXTRACT SKILLS =====
     if args.skip_extract:
@@ -258,6 +324,9 @@ def main():
                 print("Continuing with unnormalized skills.")
     else:
         print("  Skipping normalization (no API key)")
+
+    # Reclassify any misplaced skills (e.g., cloud platforms in certifications)
+    df = reclassify_skills(df)
 
     # Save normalized data
     normalized_path = os.path.join(output_dir, "normalized_jobs.csv")

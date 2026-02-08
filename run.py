@@ -18,7 +18,7 @@ JOB_TITLES = [
     "Economic Associate",
     "Data Analyst Economics",
     "Policy Analyst",
-    "Research Analyst"
+    "Research Analyst",
 ]
 
 # Examples for other fields (uncomment one or write your own):
@@ -34,7 +34,7 @@ JOB_TITLES = [
 #  Options: "Northeast", "Southeast", "Midwest",
 #           "South_Central", "West", or "all"
 # ──────────────────────────────────────────────────────────
-REGIONS = "all"
+REGIONS = "Northeast"
 
 # Examples:
 # REGIONS = "Northeast"
@@ -67,15 +67,16 @@ COST_LIMIT = 5.00
 #  Set to a file path to reuse previous data, or None to
 #  run from scratch.
 # ──────────────────────────────────────────────────────────
-SKIP_SCRAPE = None       # e.g. "output/raw_jobs.csv"
-SKIP_EXTRACT = None      # e.g. "output/normalized_jobs.csv"
+SKIP_SCRAPE = None  # e.g. "output/raw_jobs.csv"
+SKIP_EXTRACT = None  # e.g. "output/normalized_jobs.csv"
 
 # ──────────────────────────────────────────────────────────
 #  OTHER OPTIONS
 # ──────────────────────────────────────────────────────────
-USE_BATCH_API = True     # True = 50% cheaper (recommended), False = slower debug mode
-AUTO_CONFIRM = True      # True = skip cost prompts, False = ask before each API call
-OUTPUT_DIR = "output"    # Where results are saved
+USE_BATCH_API = True  # True = 50% cheaper (recommended), False = slower debug mode
+AUTO_CONFIRM = True  # True = skip cost prompts, False = ask before each API call
+FILTER_OFF_TOPIC = True  # True = remove off-topic postings before LLM extraction
+OUTPUT_DIR = "output"  # Where results are saved
 
 
 # ══════════════════════════════════════════════════════════
@@ -84,6 +85,7 @@ OUTPUT_DIR = "output"    # Where results are saved
 
 import sys
 import os
+
 
 def build_command():
     """Convert the settings above into a main.py command."""
@@ -100,6 +102,8 @@ def build_command():
         cmd.append("--no-batch")
     if AUTO_CONFIRM:
         cmd.append("--yes")
+    if not FILTER_OFF_TOPIC:
+        cmd.append("--no-filter")
     if SKIP_SCRAPE:
         cmd.extend(["--skip-scrape", SKIP_SCRAPE])
     if SKIP_EXTRACT:
