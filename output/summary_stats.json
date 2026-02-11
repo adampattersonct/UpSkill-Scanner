@@ -1,0 +1,11 @@
+{
+  "total_postings": 110,
+  "postings_with_skills": 110,
+  "extraction_rate": 100.0,
+  "unique_skills": 857,
+  "total_skill_mentions": 2307,
+  "avg_skills_per_posting": 21.0,
+  "postings_by_region": {
+    "Northeast": 110
+  }
+}
