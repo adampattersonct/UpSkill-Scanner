@@ -35,7 +35,7 @@ JOB_TITLES = [
 #  Options: "Northeast", "Southeast", "Midwest",
 #           "South_Central", "West", or "all"
 # ──────────────────────────────────────────────────────────
-REGIONS = "Northeast"
+REGIONS = "all"
 
 # Examples:
 # REGIONS = "Northeast"
@@ -47,7 +47,7 @@ REGIONS = "Northeast"
 #  Higher = more data but slower scraping ; more costly to run through the model. Adjust based on your needs and budget.
 #  Recommended: 5 for testing, 25 for full runs
 # ──────────────────────────────────────────────────────────
-POSTINGS_PER_CITY = 15
+POSTINGS_PER_CITY = 25
 SITE_NAMES = [
     "indeed",
     "glassdoor",
