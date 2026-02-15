@@ -7,12 +7,20 @@
       python run.py
 =============================================================
 """
+import os
 
 # ──────────────────────────────────────────────────────────
 #  JOB TITLES TO SEARCH
 #  Change these to match your discipline / field of study
 # ──────────────────────────────────────────────────────────
-JOB_TITLES = ["Entry level Economist", "Entry level Economics"]
+JOB_TITLES = [
+    "Junior Economist",
+    "Economic Analyst",
+    "Financial Analyst",
+    "Research Analyst",
+    "Data Analyst",
+    "Policy Analyst",
+]
 
 # Examples for other fields (uncomment one or write your own):
 #
@@ -39,8 +47,11 @@ REGIONS = "Northeast"
 #  Higher = more data but slower scraping ; more costly to run through the model. Adjust based on your needs and budget.
 #  Recommended: 5 for testing, 25 for full runs
 # ──────────────────────────────────────────────────────────
-POSTINGS_PER_CITY = 25
-SITE_NAMES = ["indeed", "linkedin"]  # Job board sources (options: "indeed", "linkedin", "zip_recruiter", "glassdoor")
+POSTINGS_PER_CITY = 15
+SITE_NAMES = [
+    "indeed",
+    "glassdoor",
+]  # Job board sources (options: "indeed", "linkedin", "zip_recruiter", "glassdoor")
 
 # ──────────────────────────────────────────────────────────
 #  AI MODEL
@@ -65,12 +76,25 @@ SKIP_SCRAPE = None  # e.g. "output/raw_jobs.csv"
 SKIP_EXTRACT = None  # e.g. "output/normalized_jobs.csv"
 
 # ──────────────────────────────────────────────────────────
+#  RUN NAME (for organizing multiple runs)
+#  Set a name to save results in output/<run_name>/
+#  Set to None to save directly in output/
+# ──────────────────────────────────────────────────────────
+RUN_NAME = None  # e.g. "economics_northeast", "nursing_all_regions"
+
+# Examples:
+# RUN_NAME = "economics_northeast"
+# RUN_NAME = "economics_all_25"
+# RUN_NAME = "nursing_southeast_test"
+# RUN_NAME = "cs_full_run"
+
+# ──────────────────────────────────────────────────────────
 #  OTHER OPTIONS
 # ──────────────────────────────────────────────────────────
 USE_BATCH_API = True  # True = 50% cheaper (recommended), False = slower debug mode
 AUTO_CONFIRM = True  # True = skip cost prompts, False = ask before each API call
 FILTER_OFF_TOPIC = True  # True = remove off-topic postings before LLM extraction
-OUTPUT_DIR = "output"  # Where results are saved
+OUTPUT_DIR = os.path.join("output", RUN_NAME) if RUN_NAME else "output"
 
 
 # ══════════════════════════════════════════════════════════
@@ -78,7 +102,6 @@ OUTPUT_DIR = "output"  # Where results are saved
 # ══════════════════════════════════════════════════════════
 
 import sys
-import os
 
 
 def build_command():
