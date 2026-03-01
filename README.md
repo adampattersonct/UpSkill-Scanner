@@ -2,7 +2,10 @@
 
 **Job Market Skill Intelligence Tool** — Scans job postings to identify in-demand skills for any discipline.
 
-Upskill-Scanner scrapes entry-level job postings across 5 US regions (50 metro areas), uses Claude to extract and normalize skills, and produces publication-ready visualizations.
+Upskill-Scanner scrapes job postings across 5 US regions (50 metro areas), uses Claude to extract and normalize skills, and produces publication-ready visualizations. Job title(s), region, and sample size are inputs of the package. Outputs include visualization of salient and in-demand skills and .csv output for the user to conduct further analysis. 
+
+⚠️ Disclaimer
+UpskillScan is provided for educational and academic research purposes only. It depends on JobSpy, which collects publicly available job postings from various job board platforms. The authors of UpskillScan are not affiliated with or endorsed by JobSpy or any job board platform. Users are solely responsible for ensuring their use complies with all applicable laws and the terms of service of any platforms from which data is collected. The authors are not responsible for any misuse of this software.
 
 ## Quick Start
 
@@ -39,7 +42,7 @@ JOB_TITLES = [
 
 REGIONS = "all"           # "Northeast", "West", "all", etc.
 POSTINGS_PER_CITY = 25    # 5 for testing, 25 for full runs
-SITE_NAMES = ["", ""]     # Job board sources (required — no default; input lowercase and all one word ; use the big two)
+SITE_NAMES = ["", ""]     # Job board sources (required — no default; input lowercase and all one word ; example indeed , glassdoor)
 COST_LIMIT = 5.00         # Budget cap in USD
 ```
 
