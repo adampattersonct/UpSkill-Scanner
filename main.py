@@ -388,6 +388,27 @@ def main():
         total_postings=stats["total_postings"],
     )
 
+    # Regional heterogeneity analysis (only when analyzing all regions)
+    if args.regions.lower() == "all" and not region_matrix.empty:
+        print("\n  Generating regional analysis...")
+        for region in region_names:
+            region_ranking = aggregator.aggregate_for_region(df, region)
+            region_count = stats["postings_by_region"].get(region, 0)
+            # Save per-region ranking CSV
+            region_ranking.to_csv(
+                os.path.join(output_dir, f"regional_ranking_{region.lower()}.csv"),
+                index=False,
+            )
+            # Generate per-region treemap
+            viz.treemap_by_category(
+                region_ranking,
+                filename=f"skills_treemap_{region.lower()}.png",
+                job_titles=titles,
+                regions=[region],
+                total_postings=region_count,
+            )
+        print(f"  Generated {len(region_names)} regional treemaps + ranking CSVs")
+
     # ===== SUMMARY =====
     print("\n" + "=" * 60)
     print("SUMMARY")

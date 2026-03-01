@@ -61,6 +61,19 @@ class SkillAggregator:
         result["category_label"] = result["category"].map(CATEGORY_LABELS)
         return result.reset_index(drop=True)
 
+    def aggregate_for_region(self, df: pd.DataFrame, region: str) -> pd.DataFrame:
+        """Top skills for a single region (same format as aggregate_national)."""
+        region_df = df[df["region"] == region]
+        counts = self._count_skills(region_df)
+        if not counts:
+            return pd.DataFrame(columns=["skill", "category", "count", "percentage"])
+
+        result = pd.DataFrame(counts, columns=["skill", "category", "count"])
+        result = result.sort_values("count", ascending=False)
+        result["percentage"] = (result["count"] / len(region_df) * 100).round(1) if len(region_df) > 0 else 0
+        result["category_label"] = result["category"].map(CATEGORY_LABELS)
+        return result.reset_index(drop=True)
+
     def aggregate_by_region(self, df: pd.DataFrame) -> pd.DataFrame:
         """Skills x Region matrix with percentages."""
         if "region" not in df.columns:

@@ -5,7 +5,7 @@
 Upskill-Scanner scrapes job postings across 5 US regions (50 metro areas), uses Claude to extract and normalize skills, and produces publication-ready visualizations. Job title(s), region, and sample size are inputs of the package. Outputs include visualization of salient and in-demand skills and .csv output for the user to conduct further analysis. 
 
 ⚠️ Disclaimer
-UpskillScan is provided for educational and academic research purposes only. It depends on JobSpy, which collects publicly available job postings from various job board platforms. The authors of UpskillScan are not affiliated with or endorsed by JobSpy or any job board platform. Users are solely responsible for ensuring their use complies with all applicable laws and the terms of service of any platforms from which data is collected. The authors are not responsible for any misuse of this software.
+UpskillScan is provided for educational and academic research purposes only. It depends on JobSpy, which collects publicly available job postings from various job board platforms. The author of Upskill-Scanner are not affiliated with or endorsed by JobSpy or any job board platform. Users are solely responsible for ensuring their use complies with all applicable laws and the terms of service of any platforms from which data is collected. The author is not responsible for any misuse of this software.
 
 ## Quick Start
 
@@ -160,6 +160,14 @@ All saved to `output/`:
 | `skills_region_heatmap.png` | Heatmap of skills by region |
 | `skills_treemap.png` | Treemap by skill category |
 | `top_skills_<region>.png` | Per-region bar charts |
+| `skills_treemap_<region>.png` | Per-region treemaps (only when `REGIONS = "all"`) |
+| `regional_ranking_<region>.csv` | Per-region skill rankings (only when `REGIONS = "all"`) |
+
+### Regional Heterogeneity Analysis
+
+When `REGIONS = "all"` (default), UpskillScan automatically generates per-region treemaps and ranking CSVs in addition to the national outputs. This enables side-by-side comparison of skill demand across regions — useful for identifying geographic variation in employer expectations.
+
+These additional outputs are only produced when all 5 regions are analyzed, since cross-region comparison requires the full dataset. When running a single region (e.g., `REGIONS = "Northeast"`), only the national-level visualizations are generated.
 
 ## Project Structure
 
