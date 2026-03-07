@@ -23,7 +23,7 @@ from extractor import SkillExtractor
 from normalizer import SkillNormalizer
 from aggregator import SkillAggregator
 from visualizer import SkillVisualizer
-from relevance_filter import filter_relevance
+
 
 
 def parse_args():
@@ -108,11 +108,7 @@ def parse_args():
         default=None,
         help="Path to existing extracted CSV (skip LLM extraction)",
     )
-    parser.add_argument(
-        "--no-filter",
-        action="store_true",
-        help="Skip relevance filtering of scraped postings",
-    )
+
     return parser.parse_args()
 
 
@@ -235,16 +231,6 @@ def main():
         raw_path = os.path.join(output_dir, "raw_jobs.csv")
         df.to_csv(raw_path, index=False)
         print(f"  Saved raw data: {raw_path} ({len(df)} postings)")
-
-    # ===== STEP 1.5: RELEVANCE FILTER =====
-    if not args.no_filter and not args.skip_extract:
-        print("\nStep 1.5: Filtering off-topic postings...")
-        pre_filter = len(df)
-        df = filter_relevance(df, search_titles=titles)
-        if len(df) < pre_filter:
-            filtered_path = os.path.join(output_dir, "filtered_jobs.csv")
-            df.to_csv(filtered_path, index=False)
-            print(f"  Saved filtered data: {filtered_path}")
 
     # ===== STEP 2: EXTRACT SKILLS =====
     if args.skip_extract:
