@@ -8,7 +8,7 @@ from typing import Dict, List, Set
 import anthropic
 import pandas as pd
 
-from config import DEFAULT_MODEL, MAX_DESCRIPTION_CHARS, NORMALIZATION_PROMPT
+from config import DEFAULT_MODEL, NORMALIZATION_PROMPT
 from cost_tracker import CostLimitExceeded, CostTracker
 from extractor import _strip_markdown_fences
 

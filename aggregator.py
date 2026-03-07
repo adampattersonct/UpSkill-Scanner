@@ -7,7 +7,12 @@ from typing import Dict, List, Tuple
 import pandas as pd
 
 
-SKILL_CATEGORIES = ["technical_skills", "soft_skills", "certifications", "domain_knowledge"]
+SKILL_CATEGORIES = [
+    "technical_skills",
+    "soft_skills",
+    "certifications",
+    "domain_knowledge",
+]
 
 CATEGORY_LABELS = {
     "technical_skills": "Technical",
@@ -56,11 +61,13 @@ class SkillAggregator:
                 pair_counter[(skill, cat)] += 1
 
         # Pick the dominant category for each skill
-        skill_cat: dict = {}   # skill -> best category
+        skill_cat: dict = {}  # skill -> best category
         skill_count: Counter = Counter()  # skill -> total posting count
         for (skill, cat), count in pair_counter.items():
             skill_count[skill] += count
-            if skill not in skill_cat or count > pair_counter.get((skill, skill_cat[skill]), 0):
+            if skill not in skill_cat or count > pair_counter.get(
+                (skill, skill_cat[skill]), 0
+            ):
                 skill_cat[skill] = cat
 
         # But skill_count double-counts if the same skill appeared in multiple
@@ -96,7 +103,11 @@ class SkillAggregator:
 
         result = pd.DataFrame(counts, columns=["skill", "category", "count"])
         result = result.sort_values("count", ascending=False)
-        result["percentage"] = (result["count"] / len(region_df) * 100).round(1) if len(region_df) > 0 else 0
+        result["percentage"] = (
+            (result["count"] / len(region_df) * 100).round(1)
+            if len(region_df) > 0
+            else 0
+        )
         result["category_label"] = result["category"].map(CATEGORY_LABELS)
         return result.reset_index(drop=True)
 
@@ -160,7 +171,9 @@ class SkillAggregator:
                     "category": CATEGORY_LABELS.get(cat, cat),
                     "unique_skills": len(all_skills),
                     "total_mentions": total_mentions,
-                    "avg_per_posting": round(total_mentions / len(df), 1) if len(df) > 0 else 0,
+                    "avg_per_posting": (
+                        round(total_mentions / len(df), 1) if len(df) > 0 else 0
+                    ),
                 }
             )
         return pd.DataFrame(rows)
@@ -196,10 +209,16 @@ class SkillAggregator:
         stats = {
             "total_postings": total_postings,
             "postings_with_skills": has_skills,
-            "extraction_rate": round(has_skills / total_postings * 100, 1) if total_postings > 0 else 0,
+            "extraction_rate": (
+                round(has_skills / total_postings * 100, 1) if total_postings > 0 else 0
+            ),
             "unique_skills": len(all_skills),
             "total_skill_mentions": total_skill_mentions,
-            "avg_skills_per_posting": round(total_skill_mentions / total_postings, 1) if total_postings > 0 else 0,
+            "avg_skills_per_posting": (
+                round(total_skill_mentions / total_postings, 1)
+                if total_postings > 0
+                else 0
+            ),
             "postings_by_region": region_counts,
         }
         return stats

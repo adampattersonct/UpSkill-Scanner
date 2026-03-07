@@ -9,7 +9,7 @@ import anthropic
 import pandas as pd
 from pydantic import BaseModel, Field
 
-from config import DEFAULT_MODEL, EXTRACTION_PROMPT, MAX_DESCRIPTION_CHARS
+from config import DEFAULT_MODEL, EXTRACTION_PROMPT
 from cost_tracker import CostLimitExceeded, CostTracker
 
 
@@ -63,7 +63,7 @@ class SkillExtractor:
     def extract_skills_single(self, description: str) -> Optional[SkillExtraction]:
         """Synchronous single-posting extraction (for testing/debugging)."""
         prompt = EXTRACTION_PROMPT.format(
-            description=description[:MAX_DESCRIPTION_CHARS]
+            description=description
         )
         for attempt in range(3):
             try:
@@ -168,7 +168,7 @@ class SkillExtractor:
             if pd.isna(row[desc_column]):
                 continue
             prompt = EXTRACTION_PROMPT.format(
-                description=row[desc_column][:MAX_DESCRIPTION_CHARS]
+                description=row[desc_column]
             )
             requests.append(
                 {

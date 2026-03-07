@@ -93,7 +93,7 @@ DEFAULT_JOB_TITLES = [
 ]
 DEFAULT_N_PER_CITY = 25
 DEFAULT_SITE_NAMES = ["", ""]
-MAX_DESCRIPTION_CHARS = 4000
+
 SCRAPE_HOURS_OLD = 168  # 1 week
 
 EXTRACTION_PROMPT = """You are an expert labor market analyst. Extract professional skills from this job posting.
