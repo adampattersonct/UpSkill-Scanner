@@ -33,18 +33,44 @@ class SkillAggregator:
     def _count_skills(
         self, df: pd.DataFrame, categories: List[str] = None
     ) -> List[Tuple[str, str, int]]:
-        """Count skill occurrences. Returns list of (skill, category, count)."""
+        """Count skill occurrences. Returns list of (skill, category, count).
+
+        Each posting contributes at most 1 count per skill, even if the skill
+        appears in multiple category columns (e.g. both technical_skills and
+        domain_knowledge).  The category assigned is the one where the skill
+        appears most often across the entire DataFrame.
+        """
         categories = categories or SKILL_CATEGORIES
+
+        # First pass: count (skill, category) pairs — one per posting per skill
+        pair_counter: Counter = Counter()  # (skill, category) -> postings count
+        for _, row in df.iterrows():
+            seen_skills: dict = {}  # skill -> first category seen in this row
+            for cat in categories:
+                if cat not in df.columns:
+                    continue
+                for skill in self._parse_skills(row.get(cat)):
+                    if skill not in seen_skills:
+                        seen_skills[skill] = cat
+            for skill, cat in seen_skills.items():
+                pair_counter[(skill, cat)] += 1
+
+        # Pick the dominant category for each skill
+        skill_cat: dict = {}   # skill -> best category
+        skill_count: Counter = Counter()  # skill -> total posting count
+        for (skill, cat), count in pair_counter.items():
+            skill_count[skill] += count
+            if skill not in skill_cat or count > pair_counter.get((skill, skill_cat[skill]), 0):
+                skill_cat[skill] = cat
+
+        # But skill_count double-counts if the same skill appeared in multiple
+        # categories for the same posting.  We already handled that above by
+        # only recording each skill once per row via ``seen_skills``, so
+        # skill_count is correct (one count per posting per skill).
+
         results = []
-        for cat in categories:
-            if cat not in df.columns:
-                continue
-            counter = Counter()
-            for val in df[cat]:
-                for skill in self._parse_skills(val):
-                    counter[skill] += 1
-            for skill, count in counter.items():
-                results.append((skill, cat, count))
+        for skill, count in skill_count.items():
+            results.append((skill, skill_cat[skill], count))
         return results
 
     def aggregate_national(self, df: pd.DataFrame) -> pd.DataFrame:
