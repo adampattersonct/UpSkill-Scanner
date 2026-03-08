@@ -93,6 +93,7 @@ RUN_NAME = None  # e.g. "economics_northeast", "nursing_all_regions"
 # ──────────────────────────────────────────────────────────
 USE_BATCH_API = True  # True = 50% cheaper (recommended), False = slower debug mode
 AUTO_CONFIRM = True  # True = skip cost prompts, False = ask before each API call
+FILTER_OFF_TOPIC = True  # True = remove off-topic postings before LLM extraction
 OUTPUT_DIR = os.path.join("output", RUN_NAME) if RUN_NAME else "output"
 
 
@@ -119,6 +120,8 @@ def build_command():
         cmd.append("--no-batch")
     if AUTO_CONFIRM:
         cmd.append("--yes")
+    if not FILTER_OFF_TOPIC:
+        cmd.append("--no-filter")
 
     if SKIP_SCRAPE:
         cmd.extend(["--skip-scrape", SKIP_SCRAPE])
