@@ -89,7 +89,7 @@ python main.py --regions Northeast --n-per-city 3 --no-batch
 | `--yes` | Skip confirmation prompts |
 | `--sites "a,b"` | Job board sources to scrape (required) |
 | `--no-batch` | Synchronous mode (slower, for debugging) |
-| `--no-filter` | Skip relevance filtering of scraped postings |
+| `--no-filter` | Skip block-list filtering of off-topic postings |
 | `--skip-scrape file.csv` | Reuse previously scraped data |
 | `--skip-extract file.csv` | Reuse previously extracted data |
 | `--resume-batch <id>` | Resume an interrupted batch |
@@ -102,7 +102,7 @@ JobSpy Scraper → Relevance Filter → Claude Batch API Extraction → Normaliz
 ```
 
 1. **Scrape** — Collects job postings from public job boards via `python-jobspy` (you must specify which sites to scrape in `run.py` or via `--sites`)
-2. **Filter** — Removes off-topic postings (e.g., nurses, cooks returned for "Economic Associate") using title-based relevance filtering
+2. **Filter** — Removes off-topic postings (e.g., nurses, cooks returned for "Economic Associate") using a block-list of known off-topic title patterns
 3. **Extract** — Sends each description to Claude (Haiku) via the Batch API to extract structured skills into 4 categories: technical, soft, certifications, domain knowledge
 4. **Reclassify** — Post-extraction fix for common misclassifications (e.g., cloud platforms like AWS moved from certifications to technical skills)
 5. **Normalize** — Groups synonyms via LLM (e.g., "MS Excel" / "Microsoft Excel" → "Excel")
@@ -139,7 +139,7 @@ Three layers of protection:
 2. **Software limit**: `COST_LIMIT` in `run.py` (or `COST_LIMIT_USD` in `.env`) — tool aborts if exceeded
 3. **Pre-flight estimates**: Printed before each API batch
 
-Expected cost: ~$0.70 for a full region run using Haiku + Batch API.
+Expected cost: ~$5 for a full 5-region run using Haiku + Batch API.
 
 ## Outputs
 
