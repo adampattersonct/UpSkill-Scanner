@@ -6,6 +6,11 @@ may return Walmart store leads, nurses, cooks). This module filters out
 postings whose titles are clearly unrelated to the search intent using
 a block-list of known off-topic patterns.
 
+The block list is organized into categories. Categories that overlap with the
+user's search titles are automatically disabled, making the filter
+discipline-agnostic. For example, searching for "Registered Nurse" disables
+the healthcare category so nursing postings are preserved.
+
 Can be used in the pipeline (main.py) or standalone:
     python relevance_filter.py --input output/raw_jobs.csv --titles "Economist,Policy Analyst"
 """
@@ -14,41 +19,121 @@ import argparse
 import os
 import re
 import sys
-from typing import List
+from typing import Dict, List
 
 import pandas as pd
 
 
-# Job title patterns that are almost never relevant to white-collar analytics/policy roles.
-# These catch the most common noise from JobSpy's fuzzy matching.
-BLOCK_PATTERNS = [
-    # Healthcare / Clinical
-    r"\bnurse\b", r"\bnursing\b", r"\brn\b", r"\blpn\b", r"\bcna\b",
-    r"\bpharmacist\b", r"\bpharmacy\b", r"\bdental\b", r"\bdentist\b",
-    r"\bphysician\b", r"\bsurgeon\b", r"\bmedical assistant\b",
-    r"\bphlebotom", r"\bradiolog", r"\bsonograph",
-    # Behavioral health (unless user is searching for it)
-    r"\bbehavior tech", r"\bbehavioral tech", r"\bbcba\b", r"\baba therap",
-    # Food service / Retail / Manual labor
-    r"\bcook\b", r"\bchef\b", r"\bbarista\b", r"\bserver\b", r"\bbartender\b",
-    r"\bcashier\b", r"\bjanitor\b", r"\bcustodian\b", r"\bhousekeep",
-    r"\bmeat\b.*\bseafood\b", r"\bseafood\b.*\bmeat\b",
-    r"\bstore lead\b", r"\bstore manager\b", r"\bshift lead\b",
-    r"\bwarehouse\b", r"\bforklift\b", r"\bloader\b",
-    # Skilled trades
-    r"\belectrician\b", r"\bplumber\b", r"\bhvac\b", r"\bwelding\b",
-    r"\bcarpenter\b", r"\bmechanic\b",
-    # CDL / Driving
-    r"\btruck driver\b", r"\bcdl\b", r"\bdelivery driver\b",
-]
+# Block patterns organized by category. Each category has:
+#   - "patterns": regex patterns that match off-topic job titles
+#   - "keywords": plain strings used to detect overlap with search titles;
+#                 if ANY search title contains one of these keywords, the
+#                 entire category is skipped.
+BLOCK_CATEGORIES: Dict[str, dict] = {
+    "healthcare": {
+        "keywords": [
+            "nurse", "nursing", "rn", "lpn", "cna", "pharmacist", "pharmacy",
+            "dental", "dentist", "physician", "surgeon", "medical", "phlebotom",
+            "radiolog", "sonograph", "clinical", "healthcare", "health care",
+        ],
+        "patterns": [
+            r"\bnurse\b", r"\bnursing\b", r"\brn\b", r"\blpn\b", r"\bcna\b",
+            r"\bpharmacist\b", r"\bpharmacy\b", r"\bdental\b", r"\bdentist\b",
+            r"\bphysician\b", r"\bsurgeon\b", r"\bmedical assistant\b",
+            r"\bphlebotom", r"\bradiolog", r"\bsonograph",
+        ],
+    },
+    "behavioral_health": {
+        "keywords": [
+            "behavior", "behavioral", "bcba", "aba", "therapist", "therapy",
+        ],
+        "patterns": [
+            r"\bbehavior tech", r"\bbehavioral tech", r"\bbcba\b", r"\baba therap",
+        ],
+    },
+    "food_service": {
+        "keywords": [
+            "cook", "chef", "barista", "server", "bartender", "restaurant",
+            "food service", "kitchen",
+        ],
+        "patterns": [
+            r"\bcook\b", r"\bchef\b", r"\bbarista\b", r"\bserver\b",
+            r"\bbartender\b",
+        ],
+    },
+    "retail": {
+        "keywords": [
+            "cashier", "retail", "store manager", "store lead", "shift lead",
+        ],
+        "patterns": [
+            r"\bcashier\b",
+            r"\bstore lead\b", r"\bstore manager\b", r"\bshift lead\b",
+            r"\bmeat\b.*\bseafood\b", r"\bseafood\b.*\bmeat\b",
+        ],
+    },
+    "manual_labor": {
+        "keywords": [
+            "janitor", "custodian", "housekeeper", "housekeeping",
+            "warehouse", "forklift", "loader",
+        ],
+        "patterns": [
+            r"\bjanitor\b", r"\bcustodian\b", r"\bhousekeep",
+            r"\bwarehouse\b", r"\bforklift\b", r"\bloader\b",
+        ],
+    },
+    "skilled_trades": {
+        "keywords": [
+            "electrician", "plumber", "hvac", "welding", "welder",
+            "carpenter", "mechanic",
+        ],
+        "patterns": [
+            r"\belectrician\b", r"\bplumber\b", r"\bhvac\b", r"\bwelding\b",
+            r"\bcarpenter\b", r"\bmechanic\b",
+        ],
+    },
+    "driving": {
+        "keywords": [
+            "truck driver", "cdl", "delivery driver", "trucker",
+        ],
+        "patterns": [
+            r"\btruck driver\b", r"\bcdl\b", r"\bdelivery driver\b",
+        ],
+    },
+}
 
-# Compile once for performance
-_BLOCK_RE = [re.compile(p, re.IGNORECASE) for p in BLOCK_PATTERNS]
+
+def _build_active_patterns(
+    search_titles: List[str],
+) -> tuple[list[re.Pattern], list[str], list[str]]:
+    """
+    Build the compiled regex list, skipping categories that overlap with
+    the user's search titles.
+
+    Returns:
+        (compiled_patterns, active_category_names, skipped_category_names)
+    """
+    search_blob = " ".join(t.lower() for t in search_titles)
+
+    active_patterns: list[str] = []
+    active_categories: list[str] = []
+    skipped_categories: list[str] = []
+
+    for cat_name, cat_info in BLOCK_CATEGORIES.items():
+        # Check if any keyword for this category appears in the search titles
+        overlap = any(kw in search_blob for kw in cat_info["keywords"])
+        if overlap:
+            skipped_categories.append(cat_name)
+        else:
+            active_categories.append(cat_name)
+            active_patterns.extend(cat_info["patterns"])
+
+    compiled = [re.compile(p, re.IGNORECASE) for p in active_patterns]
+    return compiled, active_categories, skipped_categories
 
 
-def is_blocked(title: str) -> bool:
-    """Check if a job title matches any block pattern."""
-    for pattern in _BLOCK_RE:
+def is_blocked(title: str, patterns: list[re.Pattern]) -> bool:
+    """Check if a job title matches any of the given block patterns."""
+    for pattern in patterns:
         if pattern.search(title):
             return True
     return False
@@ -62,8 +147,8 @@ def filter_relevance(
     """
     Filter a DataFrame of job postings by removing off-topic titles.
 
-    Uses a block-list of regex patterns to remove postings whose titles
-    match known off-topic categories (healthcare, food service, trades, etc.).
+    Block-list categories that overlap with the user's search titles are
+    automatically disabled, so the filter works for any discipline.
 
     Args:
         df: DataFrame with job postings
@@ -75,16 +160,21 @@ def filter_relevance(
     """
     original_count = len(df)
 
-    # Ensure search titles themselves aren't caught by block list
-    search_lower = {t.lower() for t in search_titles}
+    # Build patterns, skipping categories relevant to the user's search
+    patterns, active_cats, skipped_cats = _build_active_patterns(search_titles)
+
+    if skipped_cats:
+        print(f"  Filter categories disabled (overlap with search titles): {', '.join(skipped_cats)}")
+    print(f"  Active filter categories: {', '.join(active_cats) if active_cats else '(none)'}")
+
+    if not patterns:
+        print(f"  Relevance filter: all categories disabled — keeping all {original_count} postings")
+        return df.copy()
 
     def should_block(title):
         if pd.isna(title):
             return False
-        # Don't block if the title closely matches a search title
-        if title.lower().strip() in search_lower:
-            return False
-        return is_blocked(str(title))
+        return is_blocked(str(title), patterns)
 
     blocked_mask = df[title_column].apply(should_block)
     blocked_df = df[blocked_mask]
