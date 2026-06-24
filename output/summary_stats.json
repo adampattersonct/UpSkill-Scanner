@@ -1,11 +1,15 @@
 {
-  "total_postings": 110,
-  "postings_with_skills": 110,
-  "extraction_rate": 100.0,
-  "unique_skills": 857,
-  "total_skill_mentions": 2307,
-  "avg_skills_per_posting": 21.0,
+  "total_postings": 3130,
+  "postings_with_skills": 3128,
+  "extraction_rate": 99.9,
+  "unique_skills": 8929,
+  "total_skill_mentions": 85290,
+  "avg_skills_per_posting": 27.2,
   "postings_by_region": {
-    "Northeast": 110
+    "Midwest": 711,
+    "West": 692,
+    "Southeast": 639,
+    "Northeast": 590,
+    "South_Central": 498
   }
 }
