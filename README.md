@@ -162,6 +162,7 @@ All saved to `output/`:
 | `top_skills_<region>.png` | Per-region bar charts |
 | `skills_treemap_<region>.png` | Per-region treemaps (only when `REGIONS = "all"`) |
 | `regional_ranking_<region>.csv` | Per-region skill rankings (only when `REGIONS = "all"`) |
+| `publication_table.csv` | Combined national + regional table (top N skills with % by region) |
 
 ### Regional Heterogeneity Analysis
 
@@ -172,21 +173,22 @@ These additional outputs are only produced when all 5 regions are analyzed, sinc
 ## Project Structure
 
 ```
-├── run.py               # Easy config & run (start here)
-├── main.py              # CLI entry point with flags
-├── config.py            # Regions, defaults, prompts, reclassification rules
-├── cost_tracker.py      # Budget tracking & limits
-├── scraper.py           # JobSpy wrapper
-├── relevance_filter.py  # Post-scrape off-topic filtering
-├── extractor.py         # Claude Batch API skill extraction
-├── normalizer.py        # Skill synonym grouping
-├── aggregator.py        # Counting & ranking
-├── visualizer.py        # Chart generation
-├── requirements.txt     # Python dependencies
-├── .env.example         # API key template
-├── validation/          # Validation scripts
+├── run.py                   # Easy config & run (start here)
+├── main.py                  # CLI entry point with flags
+├── config.py                # Regions, defaults, prompts, reclassification rules
+├── cost_tracker.py          # Budget tracking & limits
+├── scraper.py               # JobSpy wrapper
+├── relevance_filter.py      # Post-scrape off-topic filtering
+├── extractor.py             # Claude Batch API skill extraction
+├── normalizer.py            # Skill synonym grouping
+├── aggregator.py            # Counting & ranking
+├── visualizer.py            # Chart generation
+├── publication_table.py     # Generate combined national + regional table for papers
+├── requirements.txt         # Python dependencies
+├── .env.example             # API key template
+├── validation/              # Validation scripts
 │   ├── grounding_check.py
 │   ├── human_annotation.py
 │   └── sanity_checks.py
-└── output/              # All results saved here
+└── output/                  # All results saved here
 ```
